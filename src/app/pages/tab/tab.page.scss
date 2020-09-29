@@ -1,0 +1,69 @@
+ion-tab-bar {
+    --background: #e6e6e6;
+    background: #f2f2f2;
+    --border: none;
+}
+
+ion-tab-button ion-label {
+    color: #333333;
+}
+
+ion-tab-button:active ion-label {
+    color: #ea153e;
+}
+
+.tab1 ion-icon {
+    background: url("../../../assets/icon/itacate-32b.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab2 ion-icon {
+    background: url("../../../assets/icon/itacate-33b.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab3 ion-icon {
+    background: url("../../../assets/icon/itacate-34b.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab4 ion-icon {
+    background: url("../../../assets/icon/itacate-35b.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab1:active ion-icon {
+    background: url("../../../assets/icon/itacate-32.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab2:active ion-icon {
+    background: url("../../../assets/icon/itacate-33.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab3:active ion-icon {
+    background: url("../../../assets/icon/itacate-34.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.tab4:active ion-icon {
+    background: url("../../../assets/icon/itacate-35.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}

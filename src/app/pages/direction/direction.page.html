@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture (click)="finish()">
+      <img src="../../../assets/icon/cierre.svg" alt="" width="15" height="15" />
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2>Agrega tu dirección</h2>
+
+    <div class="formuarioRegistro">
+      <form [formGroup]="directionForm" (ngSubmit)="saveDirection(directionForm.value)">
+        <ion-item>
+          <ion-label position="floating"> Calle</ion-label>
+          <ion-input type="text" formControlName="calle" placeholder="calle"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Numero</ion-label>
+          <ion-input type="number" formControlName="numero" placeholder="23"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Colonia</ion-label>
+          <ion-input type="text" formControlName="colonia" placeholder="colonia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> localidad</ion-label>
+          <ion-input type="text" formControlName="localidad" placeholder="localidad"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Municipio</ion-label>
+          <ion-input type="texto" formControlName="municipio" placeholder="municipio"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Referencia</ion-label>
+          <ion-textarea clearOnEdit="true" placeholder="color de puerta, casa, entre que calles, etc."
+            formControlName="referencia">
+          </ion-textarea>
+        </ion-item>
+        <div class="botones">
+          <ion-button type="submit" expand="block" [disabled]="directionForm.invalid" class="a"> Guardar
+          </ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

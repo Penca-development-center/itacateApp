@@ -1,0 +1,8 @@
+{
+  "name": "pencaDeliveri",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

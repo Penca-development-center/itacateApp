@@ -1,0 +1,78 @@
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #ea153e;
+}
+
+picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+picture h3 {
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.container ion-text .wra {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container .botones ion-button,
+ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #b2b2b2;
+    --color: white;
+    --border-radius: 10px;
+}
+
+ion-footer {
+    border-top: 10px solid #b2b2b2;
+    // -o-border-image: url('../../assets/icon/borde-gris.svg') 10;
+    // border-image: url('../../assets/icon/borde-gris.svg') 10;
+    height: 10%;
+    background: #f2f2f2;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-footer ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #ffffff;
+    --color: #333333;
+    --border-radius: 10px;
+}

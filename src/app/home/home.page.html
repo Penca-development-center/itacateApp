@@ -1,0 +1,48 @@
+<ion-content>
+  <div class="container">
+    <ion-text>
+      <h2>Crea tu cuenta de itacate</h2>
+    </ion-text>
+
+    <div class="formuarioRegistro">
+      <form [formGroup]="registerForm" (ngSubmit)="validatePassword(registerForm.value)">
+        <ion-item>
+          <ion-label position="floating"> ¿Cómo te llamas?</ion-label>
+          <ion-input type="text" formControlName="userName" placeholder="John Doe"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Escribe tu correo electrónico</ion-label>
+          <ion-input type="text" formControlName="email" placeholder="alguien@example.com"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Ingresa tu número de teléfono. </ion-label>
+          <ion-input type="number" formControlName="phoneNumber" placeholder="5566123456"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Crea tu contraseña</ion-label>
+          <ion-input type="password" formControlName="password" placeholder="*****"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Confirma tu contraseña.</ion-label>
+          <ion-input type="password" formControlName="passwordR" placeholder="******"></ion-input>
+        </ion-item>
+        <div class="botones">
+          <ion-button type="submit" expand="block" [disabled]="registerForm.invalid" class="a"> Crea tu cuenta
+          </ion-button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- <div class="botones">
+      <ion-button (click)="registerAlt()" expand="block" class="b"> Con otros métodos de registro </ion-button>
+    </div> -->
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-label (click)="login()"> ¿Ya tienes una cuenta? </ion-label>
+</ion-footer>

@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="wrapper">
+      <picture>
+        <img src="../../../assets/icon/itacate_perfil.svg" alt="" width="40" height="40" />
+
+        <ion-text>
+          <ion-title>Hola</ion-title>{{ userName ||"Persona"}}
+        </ion-text>
+      </picture>
+      <img src="../../../assets/icon/itacate-07.svg" alt="" width="40" height="40" (click)="showCart()" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-item class="search">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="¿Què vas a comer?"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col><img src="../../../assets/icon/itacate-08.svg" alt="" />
+          <ion-label>Grill</ion-label>
+        </ion-col>
+        <ion-col><img src="../../../assets/icon/itacate-09.svg" alt="" />
+          <ion-label>Americana</ion-label>
+        </ion-col>
+        <ion-col><img src="../../../assets/icon/itacate-10.svg" alt="" />
+          <ion-label>Mexicana</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><img src="../../../assets/icon/itacate-13.svg" alt="" />
+          <ion-label>Tacos</ion-label>
+        </ion-col>
+        <ion-col><img src="../../../assets/icon/itacate-12.svg" alt="" />
+          <ion-label>Bebidas</ion-label>
+        </ion-col>
+        <ion-col><img src="../../../assets/icon/itacate-11.svg" alt="" />
+          <ion-label>Mariscos</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><img src="../../../assets/icon/itacate-14.svg" alt="" />
+          <ion-label>Sano</ion-label>
+        </ion-col>
+        <ion-col (click)="goToRestaurant()"><img src="../../../assets/icon/itacate-15.svg" alt="" />
+          <ion-label>Reposteria</ion-label>
+        </ion-col>
+        <ion-col><img src="../../../assets/icon/itacate-16.svg" alt="" />
+          <ion-label>Café</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

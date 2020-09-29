@@ -1,0 +1,158 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="wrapper">
+      <picture (click)="atras()">
+        <img src="../../../assets/icon/itacate-06.svg" alt="" width="15" height="15" />
+        <h3>Atrás</h3>
+      </picture>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+
+    <ion-item>
+      <img src="../../../assets/icon/itacate-19.svg">
+      <div class="restaurant-info">
+        <h4>Fray Bernardino</h4>
+        <ion-text>
+          <ion-label>
+            Andador sur, Plaza Rodrigo Gomez #2, <br> Centro 43990 Cd Sahagún hgo.
+          </ion-label>
+          <br>
+          <ion-label>
+            Horario 9:00 - 22:00
+          </ion-label>
+        </ion-text>
+      </div>
+    </ion-item>
+    <div class="categories">
+      <img src="../../../assets/icon/itacate-17.svg" alt="" height="10">
+      <ion-segment scrollable value="categories" [(ngModel)]="category" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="entradas">
+          <ion-label>Entradas</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="reposteria">
+          <ion-label>Reposteria</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="bebidas">
+          <ion-label>Bebidas</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="huevos">
+          <ion-label>Huevos</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="mariscos">
+          <ion-label>Mariscos</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+
+    <ion-list class="menu-items" [ngSwitch]="category">
+      <div *ngSwitchCase="'entradas'">
+        <ion-item *ngFor="let entrada of entradas">
+          <img src="{{entrada.foto}}" alt="">
+          <div class="restaurant-info">
+            <h3>{{entrada.nombre}}</h3>
+            <ion-text>
+              {{entrada.descripcion}} <br />
+              Listo en: <strong>30min</strong> <strong> ${{entrada.precio}}.00 </strong> </ion-text>
+            <ion-button> Agregar</ion-button>
+          </div>
+        </ion-item>
+      </div>
+      <div *ngSwitchCase="'reposteria'">
+        <ion-item *ngFor="let postre of postres">
+          <img src="{{postre.foto}}" alt="">
+          <div class="restaurant-info">
+            <h3>{{postre.nombre}}</h3>
+            <ion-text>
+              {{postre.descripcion}} <br />
+              Listo en: <strong>30min</strong> <strong> ${{postre.precio}}.00 </strong> </ion-text>
+            <ion-button> Agregar</ion-button>
+          </div>
+        </ion-item>
+      </div>
+      <div *ngSwitchCase="'bebidas'">
+        <ion-item *ngFor="let bebida of bebidas">
+          <img src="{{bebida.foto}}" alt="">
+          <div class="restaurant-info">
+            <h3>{{bebida.nombre}}</h3>
+            <ion-text>
+              {{bebida.descripcion}} <br />
+              Listo en: <strong>30min</strong> <strong> ${{bebida.precio}}.00 </strong> </ion-text>
+            <ion-button> Agregar</ion-button>
+          </div>
+        </ion-item>
+      </div>
+
+      <div *ngSwitchCase="'huevos'">
+        <ion-item *ngFor="let huevo of huevos">
+          <img src="{{huevo.foto}}" alt="">
+          <div class="restaurant-info">
+            <h3>{{huevo.nombre}}</h3>
+            <ion-text>
+              {{huevo.descripcion}} <br />
+              Listo en: <strong>30min</strong> <strong> ${{huevo.precio}}.00 </strong></ion-text>
+            <ion-button> Agregar</ion-button>
+          </div>
+        </ion-item>
+      </div>
+      <div *ngSwitchCase="'mariscos'">
+        <ion-item *ngFor="let marisco of mariscos">
+          <img src="{{marisco.foto}}" alt="">
+          <div class="restaurant-info">
+            <h3>{{marisco.nombre}}</h3>
+            <ion-text>
+              {{marisco.descripcion}} <br />
+              Listo en: <strong>30min</strong> <strong> ${{marisco.precio}}.00 </strong> </ion-text>
+            <ion-button> Agregar</ion-button>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <!-- <ion-list class="menu-items">
+      <ion-item>
+        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Pastel de queso</h3>
+          <ion-text>
+            Reposteria <br />
+            Listo en: <strong>30min</strong><strong>$20.00</strong></ion-text>
+          <ion-button> Agregar</ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <img src="../../../assets/icon/itacate-27.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Fresas con crema</h3>
+          <ion-text>
+            Reposteria <br />
+            Listo en: <strong>15min</strong><strong>$15.00</strong></ion-text>
+          <ion-button>Agregar</ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <img src="../../../assets/icon/itacate-28.svg" alt="" />
+        <div class="restaurant-info">
+          <h3> Helado de chocolate </h3>
+          <ion-text> Reposteria <br /> Listo en: <strong> 30min</strong><strong>$15.00</strong></ion-text>
+          <ion-button> Agregar </ion-button>
+        </div>
+      </ion-item>
+    </ion-list> -->
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-button class="c" (click)="showCart()">
+    <div class="btn-wrapper">
+      <ion-icon src="../../../assets/icon/itacate-18.svg"></ion-icon>
+      <h4>Ver canasta</h4>
+      <ion-text>$35.00</ion-text>
+    </div>
+  </ion-button>
+</ion-footer>

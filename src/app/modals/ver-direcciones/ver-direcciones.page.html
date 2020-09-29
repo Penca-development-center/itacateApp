@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture (click)="finish()">
+      <img src="../../../assets/icon/cierre.svg" alt="" width="15" height="15" />
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2>Tus direcciones guardadas</h2>
+    <ion-list class="direcciones">
+      <ion-item>
+        <div class="direccion">
+          <ion-icon src="../../../assets/icon/marcador.svg" class="direccion-icon"></ion-icon>
+          <ion-text class="">
+            XXXXXXXXXXXXXXXXXXXXXX
+            <ion-label>
+              yyyyyyyyyyy yyyy
+            </ion-label>
+          </ion-text>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-button (click)="addDirections()"> Agregar una dirección nueva </ion-button>
+</ion-footer>

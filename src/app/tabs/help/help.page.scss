@@ -1,0 +1,66 @@
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #ea153e;
+}
+
+picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+picture img {
+    margin: 0 30px;
+}
+
+picture h3 {
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.container .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container .botones ion-button,
+ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #ea153e;
+    --color: white;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
+ion-text {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1.42rem;
+}

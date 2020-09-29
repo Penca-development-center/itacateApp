@@ -1,0 +1,199 @@
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #ea153e;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+picture h3 {
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.container ion-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    height: 150px;
+    color: #333333;
+    --background: #f2f2f2;
+    --border-radius: 5px;
+    --ion-border-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+
+.container ion-item img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+
+.categories ion-segment {
+    width: 100%;
+    height: 100%;
+}
+
+.categories ion-segment ion-segment-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    --color-checked: #ea153e;
+}
+
+.categories ion-segment ion-segment-button ion-label {
+    color: #333333;
+    --color: #333333;
+    --color-checked: #333333;
+}
+
+.restaurant-info {}
+
+.menu-items {
+    width: 95%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+}
+
+.menu-items div {
+    width: 100%;
+}
+
+.menu-items ion-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    height: 150px;
+    color: #333333;
+    --background: #f2f2f2;
+    --border-radius: 5px;
+    --ion-border-color: #333333;
+    border-radius: 5px;
+
+}
+
+.menu-items img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+
+.menu-items ion-item .restaurant-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.restaurant-info h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.restaurant-info ion-text {
+    font-size: 13px;
+    text-align: start;
+}
+
+.restaurant-info ion-button {
+    font-size: 10px;
+    --border-radius: 5px;
+    --box-shadow: none;
+    --background: rgb(234, 21, 62);
+    --background: linear-gradient(90deg, rgba(234, 21, 62, 1) 0%, rgba(242, 59, 54, 1) 100%);
+}
+
+ion-footer {
+    background: #f2f2f2;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-footer ion-button {
+    width: 95%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #ea153e;
+    --color: white;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
+ion-label {
+    color: #333333;
+    --color: #333333;
+}
+
+.categories {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.btn-wrapper {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.btn-wrapper ion-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-wrapper h4 {
+    margin: 0;
+}

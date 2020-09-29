@@ -1,0 +1,113 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="wrapper">
+      <picture (click)="atras()">
+        <img src="../../../assets/icon/itacate-06.svg" alt="" width="15" height="15" />
+        <h3>Atrás</h3>
+      </picture>
+      <img src="../../../assets/icon/itacate-07.svg" alt="" width="40" height="40" (click)="showCart()" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-item class="search">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="¿Què vas a comer?"></ion-input>
+    </ion-item>
+
+    <ion-list class="banner">
+      <ion-segment scrollable="true" value="banner">
+        <ion-segment-button value="promo 1">
+          <img src="../../../assets/icon/anuncio.svg" />
+        </ion-segment-button>
+
+        <ion-segment-button value="promo 2">
+          <img src="../../../assets/icon/anuncio.svg" />
+        </ion-segment-button>
+
+        <ion-segment-button value="promo 3">
+          <img src="../../../assets/icon/anuncio.svg" />
+        </ion-segment-button>
+
+        <ion-segment-button value="promo 4">
+          <img src="../../../assets/icon/anuncio.svg" />
+        </ion-segment-button>
+
+        <ion-segment-button value="promo 5">
+          <img src="../../../assets/icon/anuncio.svg" />
+        </ion-segment-button>
+      </ion-segment>
+    </ion-list>
+    <ion-list class="restaurants">
+      <div class="categories">
+        <ion-segment scrollable value="categories">
+          <ion-segment-button value="grill">
+            <ion-icon src="../../../assets/icon/itacate-08.svg"></ion-icon>
+            <ion-label>Grill</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="americana">
+            <ion-icon src="../../../assets/icon/itacate-09.svg"></ion-icon>
+            <ion-label>Americana</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="mexicana">
+            <ion-icon src="../../../assets/icon/itacate-10.svg"></ion-icon>
+            <ion-label>Mexicana</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tacos">
+            <ion-icon src="../../../assets/icon/itacate-11.svg"></ion-icon>
+            <ion-label>Tacos</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="bebidas">
+            <ion-icon src="../../../assets/icon/itacate-12.svg"></ion-icon>
+            <ion-label>Bebidas</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="mariscos">
+            <ion-icon src="../../../assets/icon/itacate-13.svg"></ion-icon>
+            <ion-label>Mariscos</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="sano">
+            <ion-icon src="../../../assets/icon/itacate-14.svg"></ion-icon>
+            <ion-label>Sano</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="cafe">
+            <ion-icon src="../../../assets/icon/itacate-16.svg"></ion-icon>
+            <ion-label>Café</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+      </div>
+      <ion-item>
+        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Acacia</h3>
+          <ion-text>
+            Reposteria <br />
+            <strong>30min</strong></ion-text>
+          <ion-button (click)="showMenu()"> Envío gratis desde $50.00 </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <img src="../../../assets/icon/itacate-27.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Fray Bernardino</h3>
+          <ion-text>
+            Reposteria <br />
+            <strong>30min</strong></ion-text>
+          <ion-button (click)="showMenu()">Envío gratis</ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <img src="../../../assets/icon/itacate-28.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Emporio</h3>
+          <ion-text> Reposteria <br /><strong> 30min</strong></ion-text>
+          <ion-button (click)="showMenu()"> Envio a $10.00 </ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

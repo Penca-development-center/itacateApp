@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture (click)="atras()"> <img src="../../../assets/icon/itacate-06.svg" alt="" width="15" height="15">
+      <h3> Atrás </h3>
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2> Inicio de sesion </h2>
+
+    <div class="botones">
+
+      <!-- <ion-button expand="block">
+        <ion-icon name="phone-portrait-outline" slot="start">
+        </ion-icon>
+        Con tu número de telefono
+      </ion-button> -->
+      <div class="formuarioRegistro">
+        <form [formGroup]="loginForm" (ngSubmit)="loginMail(loginForm.value)">
+          <ion-item>
+            <ion-label position="floating"> Escribe tu correo electrónico</ion-label>
+            <ion-input type="text" formControlName="email" placeholder="alguien@example.com"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"> Escrive tu contraseña</ion-label>
+            <ion-input type="password" formControlName="password" placeholder="*****"></ion-input>
+          </ion-item>
+          <div class="botones">
+            <ion-button type="submit" expand="block" [disabled]="loginForm.invalid" class="a"> Ingresa
+            </ion-button>
+          </div>
+
+        </form>
+      </div>
+      <!-- 
+      <ion-button expand="block" color="primary">
+        <ion-icon name="logo-facebook" slot="start"></ion-icon> Con Facebook
+      </ion-button> -->
+
+
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-label (click)="atras()"> ¿No te has registrasdo? </ion-label>
+  <ion-label color="danger"> ¿Olvidaste tu contrasña? </ion-label>
+</ion-footer>

@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture>
+      <h3>Tu canasta</h3> <img src="../../../assets/icon/cierre.svg" width="15" height="15" (click)="dismiss()">
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-list class="menu-items">
+      <ion-item>
+        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Pastel de queso</h3>
+          <ion-text>
+            <strong> $20.00 </strong></ion-text>
+        </div>
+        <div class="inc">
+          <ion-button>
+            +
+          </ion-button>
+          <ion-label> 1 </ion-label>
+          <ion-button>
+            -
+          </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <img src="../../../assets/icon/itacate-27.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>Fresas con crema</h3>
+          <ion-text>
+            <strong> $15.00 </strong></ion-text>
+        </div>
+        <div class="inc">
+          <ion-button>
+            +
+          </ion-button>
+          <ion-label> 1 </ion-label>
+          <ion-button>
+            -
+          </ion-button>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button class="botones" expand="block" (click)="checkout()">Ir a pagar $35.00 + iva</ion-button>
+  <ion-label> Vaciar canasta</ion-label>
+</ion-footer>

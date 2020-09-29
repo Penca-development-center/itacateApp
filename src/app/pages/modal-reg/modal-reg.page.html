@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture>
+      <h3>Regístrate también</h3> <img src="../../../assets/icon/cierre.svg" width="15" height="15" (click)="dismiss()">
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="boton">
+      <ion-button expand="block">
+        <ion-icon name="logo-facebook" slot="start"></ion-icon> Con Facebook
+      </ion-button>
+
+      <!-- <ion-button expand="block" (click)="registerMail()">
+        <ion-icon name="at-outline" slot="start"></ion-icon> Con correo.
+      </ion-button> -->
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-label (click)="login()"> Ya tengo una cuenta </ion-label>
+
+</ion-footer>

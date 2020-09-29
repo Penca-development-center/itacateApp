@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture (click)="finish()">
+      <img src="../../../assets/icon/cierre.svg" alt="" width="15" height="15" />
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2>Tus tarjetas guardadas</h2>
+    <ion-list class="tarjetas">
+      <ion-item>
+        <div class="tarjeta">
+          <ion-icon name="card" class="tarjeta-icon"></ion-icon>
+          <ion-text class="">
+            xxxx-xxxx-xxxx-34900
+            <ion-label>
+              mm/yy
+            </ion-label>
+          </ion-text>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button> Agregar una tarjeta nueva </ion-button>
+</ion-footer>

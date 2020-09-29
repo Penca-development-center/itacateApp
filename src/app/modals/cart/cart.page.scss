@@ -1,0 +1,164 @@
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #333333;
+}
+
+picture {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+}
+
+picture h3 {
+    width: 100%;
+    margin: 0 5px;
+}
+
+picture img {
+    margin-top: calc(10% - 15px);
+    margin-left: calc(90% - 15px);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.menu-items {
+    width: 95%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+}
+
+.menu-items ion-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    height: 150px;
+    color: #333333;
+    --background: #f2f2f2;
+    --border-radius: 5px;
+    --ion-border-color: #f2f2f2;
+    border-radius: 5px;
+
+}
+
+.menu-items img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+
+.menu-items ion-item .restaurant-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.restaurant-info h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.restaurant-info ion-text {
+    font-size: 13px;
+    text-align: start;
+}
+
+.restaurant-info ion-button {
+    font-size: 10px;
+    --border-radius: 5px;
+    --box-shadow: none;
+    --background: rgb(234, 21, 62);
+    --background: linear-gradient(90deg, rgba(234, 21, 62, 1) 0%, rgba(242, 59, 54, 1) 100%);
+}
+
+
+.container .boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container .boton ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #2e88d8;
+    --color: white;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
+.inc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 90px;
+    height: 20px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.inc ion-button {
+    width: 30px;
+    height: 20px;
+    --background: gray;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
+.inc ion-label {
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-footer {
+    height: 20%;
+    background: #f2f2f2;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-footer ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #ea153e;
+    --color: white;
+    --border-radius: 5px;
+    --box-shadow: none;
+}

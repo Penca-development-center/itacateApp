@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="container">
+    <ion-text>
+      <h2> Cambiar datos </h2>
+    </ion-text>
+
+    <div class="formuarioRegistro">
+
+      <form [formGroup]="editForm" (ngSubmit)="doUpdateInfo(editForm.value)">
+
+        <ion-item>
+          <ion-label position="floating"> ¿Cómo te llamas?</ion-label>
+          <ion-input type="text" formControlName="userName" placeholder="John Doe"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Escribe tu correo electrónico</ion-label>
+          <ion-input type="text" formControlName="email" placeholder="alguien@example.com"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Ingresa tu número de teléfono. </ion-label>
+          <ion-input type="number" formControlName="phoneNumber" placeholder="5566123456"></ion-input>
+        </ion-item>
+
+        <div class="botones">
+          <ion-button type="submit" expand="block" [disabled]="editForm.invalid" class="a"> Modificar datos
+          </ion-button>
+
+        </div>
+
+      </form>
+
+      <div class="botones">
+        <ion-button type="submit" expand="block" (click)="dismiss()" class="b"> Cancelar
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

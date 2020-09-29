@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="wrapper">
+      <picture (click)="atras()">
+        <img src="../../../assets/icon/itacate-06.svg" alt="" width="15" height="15" />
+        <h3>Atrás</h3>
+      </picture>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <h2>Checkout</h2>
+    <div class="direccion">
+
+      <ion-item>
+        <div class="direccion">
+          <ion-icon src="../../../assets/icon/marcador.svg" class="direccion-icon"></ion-icon>
+          <ion-text class="">
+            Dirección
+            <ion-label>
+              123 fake street
+            </ion-label>
+          </ion-text>
+        </div>
+      </ion-item>
+      <ion-text class="tiempo-ent">
+        <ion-label>Entrega estimada</ion-label>
+        <ion-label>20-30 mins</ion-label>
+      </ion-text>
+    </div>
+    <div class="pagos">
+      <h3>Forma de pago</h3>
+      <ion-list>
+        <ion-item class="pago-option">
+          <ion-icon src="../../../assets/icon/itacate-31.svg" slot="start"></ion-icon>
+          <ion-label>Efectivo</ion-label>
+        </ion-item>
+        <ion-item class="pago-option">
+          <img src="../../../assets/icon/itacate-30.svg" slot="start" width="20" height="20">
+          <ion-label>Tarjeta de Crédito/Débito</ion-label>
+        </ion-item>
+        <ion-item class="pago-option">
+          <ion-icon src="../../../assets/icon/itacate-29.svg" slot="start"></ion-icon>
+          <ion-label>Paypal</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="proceedToPay()">
+    <div class="btn-wrapper">
+      <h4>Hacer pedido</h4>
+      <ion-text>$40.60</ion-text>
+    </div>
+  </ion-button>
+</ion-footer>

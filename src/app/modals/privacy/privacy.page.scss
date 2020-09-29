@@ -1,0 +1,45 @@
+ion-content {
+    --background: none;
+    --color: none;
+}
+
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #ea153e;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.container ion-text {
+    padding: 10px;
+    text-align: justify;
+}
+
+.container .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+ion-button {
+    width: 80%;
+    margin: 10px 0;
+    text-transform: initial;
+    --box-shadow: none;
+    --background: #ea153e;
+    --border-radius: 5px;
+}

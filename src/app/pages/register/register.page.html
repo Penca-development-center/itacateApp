@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <picture (click)="atras()"> <img src="../../../assets/icon/itacate-06.svg" alt="" width="15" height="15">
+      <h3> Atrás </h3>
+    </picture>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-text>
+      <h2>Ingresa tu número celular</h2>
+      <div class="wra">+52 | <ion-input type="number" placeholder="Escribe tu número" [(ngModel)]="phoneNumber">
+        </ion-input>
+      </div>
+    </ion-text>
+
+    <div class="botones">
+      <ion-button (click)="sendSms()" expand="block">
+        <ion-icon name="mail-outline" slot="start"></ion-icon> Recibir código por SMS
+      </ion-button>
+      <ion-button (click)="sendWhatsApp()" expand="block">
+        <ion-icon name="logo-whatsapp" slot="start"></ion-icon> Recibir código via Whatsapp
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

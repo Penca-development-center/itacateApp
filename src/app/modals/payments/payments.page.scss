@@ -1,0 +1,99 @@
+ ion-toolbar {
+     --background: #f2f2f2;
+     color: #ea153e;
+ }
+
+ picture {
+     width: 100%;
+     display: flex;
+     flex-direction: row-reverse;
+     align-items: center;
+     justify-content: flex-start;
+
+ }
+
+ picture img {
+     margin: 0 30px;
+ }
+
+ picture h3 {
+     font-size: 16px;
+     margin: 0 5px;
+ }
+
+
+ ion-content {
+     --background: none;
+     --color: none;
+ }
+
+ .container {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+     background: #f2f2f2;
+     color: #333333;
+     --background: none;
+     --color: none;
+ }
+
+ .container .tarjetas {
+     width: 100%;
+     height: 90%;
+     background: #f2f2f2;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+ }
+
+ .container .tarjetas ion-item {
+     width: 100%;
+     --background: #f2f2f2;
+     color: #333333;
+     --border-color: #f2f2f2;
+ }
+
+ .container .tarjetas ion-item .tarjeta {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-evenly;
+     padding: 10px;
+ }
+
+ .container .tarjetas ion-item .tarjeta ion-icon {
+     width: 30px;
+     height: 30px;
+ }
+
+ .container .tarjetas ion-item .tarjeta ion-text {
+     height: 30px;
+     width: calc(85% - 30px);
+     font-size: 13px;
+ }
+
+ ion-footer {
+     height: 15%;
+     background: #f2f2f2;
+     color: #333333;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+ }
+
+ ion-footer ion-button {
+     width: 80%;
+     margin: 10px 0;
+     text-transform: initial;
+     --background: #ea153e;
+     --color: #ffffff;
+     --border-radius: 5px;
+     --box-shadow: none;
+ }

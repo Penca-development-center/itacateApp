@@ -1,0 +1,161 @@
+ion-toolbar {
+    --background: #f2f2f2;
+    color: #ea153e;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+picture h3 {
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #f2f2f2;
+    color: #333333;
+    --background: none;
+    --color: none;
+}
+
+.container h2 {
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    margin: 0;
+}
+
+.container .direccion {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container .direccion .tiempo-ent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container ion-item {
+    width: 100%;
+    --background: #f2f2f2;
+    color: #333333;
+    --border-color: #f2f2f2;
+}
+
+.container ion-item .direccion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+ion-item .direccion ion-icon {
+    width: 30px;
+    height: 30px;
+}
+
+ion-item .direccion ion-text {
+    height: 30px;
+    width: calc(85% - 30px);
+    font-size: 13px;
+}
+
+.container .pagos {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container .pagos h3 {
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    margin: 0;
+}
+
+.container .pagos ion-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 80%;
+    background: #f2f2f2;
+}
+
+.container .pagos ion-list ion-item {
+    width: 100%;
+    --background: #f2f2f2;
+    color: #333333;
+    --border-color: #f2f2f2;
+}
+
+ion-footer {
+    height: 10%;
+    background: #f2f2f2;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-footer ion-button {
+    width: 95%;
+    margin: 10px 0;
+    text-transform: initial;
+    --background: #ea153e;
+    --color: white;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
+.btn-wrapper {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.btn-wrapper ion-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-wrapper h4 {
+    margin: 0;
+}

@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="wrapper">
+      <picture>
+        <img src="../../../assets/icon/itacate_perfil.svg" alt="" width="40" height="40" />
+        <ion-title>
+          <h2>{{ userName ||"Persona"}} </h2>
+          <ion-text>
+            {{userMail || "Correo"}} <br>
+            {{userNumber || "Number"}}
+          </ion-text>
+        </ion-title>
+      </picture>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-list>
+      <ion-item>
+        <ion-icon slot="start" name="create"></ion-icon>
+        <ion-label>Editar mi información
+        </ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="editInfo()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="home"></ion-icon>
+        <ion-label>Administrar mis direcciones.
+        </ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="editDirections()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="card"></ion-icon>
+        <ion-label>Mis tarjetas</ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="editPayment()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="fast-food"></ion-icon>
+        <ion-label>Mis órdenes</ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="showOrders()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="key"></ion-icon>
+        <ion-label>Privacidad</ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="showPrivacy()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="help"></ion-icon>
+        <ion-label>Preguntas Frecuentes</ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l" (click)="showFaq()"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="restaurant"></ion-icon>
+        <ion-label>Quiero ser socio itacate</ion-label>
+        <ion-icon slot="end" name="chevron-forward" class="icon-l"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger">Cerrar Sesión</ion-label>
+        <ion-icon slot="end" name="power" class="icon-l" (click)="closeSession()"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>
