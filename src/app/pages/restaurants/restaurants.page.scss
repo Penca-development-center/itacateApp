@@ -76,12 +76,12 @@ ion-item {
     background: #f2f2f2;
 }
 
-.banner ion-segment {
-    width: 100%;
-    height: 100%;
+ion-segment {
+    width: 900px;
+    height: 100px;
 }
 
-.banner ion-segment ion-segment-button {
+ion-segment ion-segment-button {
     width: 100%;
     height: 100%;
     --color-checked: #f2f2f2;
