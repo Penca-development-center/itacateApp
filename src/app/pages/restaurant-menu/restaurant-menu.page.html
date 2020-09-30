@@ -57,7 +57,7 @@
             <ion-text>
               {{entrada.descripcion}} <br />
               Listo en: <strong>30min</strong> <strong> ${{entrada.precio}}.00 </strong> </ion-text>
-            <ion-button> Agregar</ion-button>
+            <ion-button (click)="agregarCarrito(entrada)"> Agregar</ion-button>
           </div>
         </ion-item>
       </div>
@@ -69,7 +69,7 @@
             <ion-text>
               {{postre.descripcion}} <br />
               Listo en: <strong>30min</strong> <strong> ${{postre.precio}}.00 </strong> </ion-text>
-            <ion-button> Agregar</ion-button>
+            <ion-button (click)="agregarCarrito(postre)"> Agregar</ion-button>
           </div>
         </ion-item>
       </div>
@@ -81,7 +81,7 @@
             <ion-text>
               {{bebida.descripcion}} <br />
               Listo en: <strong>30min</strong> <strong> ${{bebida.precio}}.00 </strong> </ion-text>
-            <ion-button> Agregar</ion-button>
+            <ion-button (click)="agregarCarrito(bebida)"> Agregar</ion-button>
           </div>
         </ion-item>
       </div>
@@ -152,7 +152,7 @@
     <div class="btn-wrapper">
       <ion-icon src="../../../assets/icon/itacate-18.svg"></ion-icon>
       <h4>Ver canasta</h4>
-      <ion-text>$35.00</ion-text>
+      <ion-text>${{total || 0}}.00</ion-text>
     </div>
   </ion-button>
 </ion-footer>

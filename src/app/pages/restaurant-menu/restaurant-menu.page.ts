@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController, ModalController } from "@ionic/angular";
+import { Storage } from "@ionic/storage";
 import { CartPage } from "../../modals/cart/cart.page";
 @Component({
   selector: "app-restaurant-menu",
@@ -13,10 +14,13 @@ export class RestaurantMenuPage implements OnInit {
   public bebidas: any = [];
   public huevos: any = [];
   public mariscos: any = [];
+  public carrito: any = [];
   public category: any = "reposteria";
+  public total: number = 0;
   constructor(
     private navCtrl: NavController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private storage: Storage
   ) {
     this.llenarMenu();
   }
@@ -210,11 +214,21 @@ export class RestaurantMenuPage implements OnInit {
     this.mariscos = [];
   }
 
+  agregarCarrito(producto) {
+    this.carrito.push(producto);
+    console.log(producto);
+  }
+
   ngOnInit() {}
 
   segmentChanged(ev: any) {
     console.log("Segment changed", ev);
     console.log(this.category);
+    const total = this.carrito.length;
+    console.log(total);
+    this.carrito.map((item) => {
+      console.log(item.precio);
+    });
   }
 
   atras() {
@@ -222,6 +236,7 @@ export class RestaurantMenuPage implements OnInit {
   }
 
   async showCart() {
+    this.storage.set("carrito", this.carrito);
     const modal = await this.modalCtrl.create({ component: CartPage });
     await modal.dismiss();
     await modal.present();
