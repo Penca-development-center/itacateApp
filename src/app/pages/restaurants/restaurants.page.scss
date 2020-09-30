@@ -76,15 +76,19 @@ ion-item {
     background: #f2f2f2;
 }
 
-ion-segment {
-    width: 900px;
+ion-slides {
+    width: 400px;
     height: 100px;
 }
 
-ion-segment ion-segment-button {
-    width: 100%;
-    height: 100%;
+ion-slides ion-slide {
+    width: 400px;
     --color-checked: #f2f2f2;
+}
+
+ion-slides ion-slide img {
+    width: 100%;
+    height: auto;
 }
 
 .categories {
