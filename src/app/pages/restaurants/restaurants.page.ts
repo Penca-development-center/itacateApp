@@ -22,7 +22,7 @@ export class RestaurantsPage implements OnInit {
         id: "1",
         categoria: "sano",
         seccion: "entradas",
-        nombre: "Ensalada de uva y vino tinto",
+        nombre: "ensalada de uva y vino tinto",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Ensalada con uvas, lechuga y fresas. Aderezada con ",
         precio: 35,
@@ -31,7 +31,7 @@ export class RestaurantsPage implements OnInit {
         id: "2",
         categoria: "sopas",
         seccion: "entradas",
-        nombre: "Crema de Elote",
+        nombre: "crema de Elote",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 20,
@@ -49,7 +49,7 @@ export class RestaurantsPage implements OnInit {
         id: "4",
         categoria: "reposteria",
         seccion: "reposteria",
-        nombre: "Pastel de queso",
+        nombre: "pastel de queso",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Pastel de queso y choclolate",
         precio: 20,
@@ -58,7 +58,7 @@ export class RestaurantsPage implements OnInit {
         id: "5",
         categoria: "reposteria",
         seccion: "reposteria",
-        nombre: "Fresas con crema",
+        nombre: "fresas con crema",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Fresas con crema",
         precio: 15,
@@ -67,10 +67,10 @@ export class RestaurantsPage implements OnInit {
         id: "6",
         categoria: "reposteria",
         seccion: "reposteria",
-        nombre: "Helado de chocolate",
+        nombre: "helado de chocolate",
         foto: "../../../assets/icon/itacate-platillos.svg",
-        descripcion: "",
-        precio: "",
+        descripcion: "Helado sabor chocolate",
+        precio: 15,
       },
       {
         id: "7",
@@ -121,7 +121,7 @@ export class RestaurantsPage implements OnInit {
         id: "12",
         categoria: "mexicana",
         seccion: "huevos",
-        nombre: "Huevos escalfasos",
+        nombre: "huevos escalfados",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 45,
@@ -130,7 +130,7 @@ export class RestaurantsPage implements OnInit {
         id: "13",
         categoria: "mariscos",
         seccion: "mariscos",
-        nombre: "Camarones a la diabla",
+        nombre: "camarones a la diabla",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 49,
@@ -139,7 +139,7 @@ export class RestaurantsPage implements OnInit {
         id: "14",
         categoria: "mariscos",
         seccion: "mariscos",
-        nombre: "Caldo de camaron",
+        nombre: "caldo de camaron",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 56,
@@ -148,7 +148,7 @@ export class RestaurantsPage implements OnInit {
         id: "15",
         categoria: "mariscos",
         seccion: "mariscos",
-        nombre: "Coctel de camaròn",
+        nombre: "coctel de camaron",
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 70,
@@ -159,10 +159,29 @@ export class RestaurantsPage implements OnInit {
     this.llenarProductos();
   }
 
-  buscar(ev) {
-    console.log(ev);
+  buscar(ev: any) {
+    let productoBuscar = ev.detail.value;
+    this.productos.filter((producto) => {
+      if (producto.nombre.includes(productoBuscar)) {
+        console.log(producto);
+      } else if (producto.categoria.includes(productoBuscar)) {
+        console.log(producto);
+      } else if (producto.seccion.includes(productoBuscar)) {
+        console.log(producto);
+      }
+    });
+
+    // return this.productos.filter(producto => {
+    //   return (
+    //     producto.nombre.includes(productoBuscar) ||
+    //     producto.categoria.includes(productoBuscar) ||
+    //     producto.seccion.includes(productoBuscar)
+    //   );
+    // });
   }
-  ionViewWillLeave() {}
+  ionViewWillLeave() {
+    this.productos = [];
+  }
 
   ngOnInit() {}
 
