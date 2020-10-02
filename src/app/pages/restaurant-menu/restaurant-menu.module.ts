@@ -1,20 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { RestaurantMenuPageRoutingModule } from './restaurant-menu-routing.module';
+import { RestaurantMenuPageRoutingModule } from "./restaurant-menu-routing.module";
 
-import { RestaurantMenuPage } from './restaurant-menu.page';
+import { CartPage } from "../../modals/cart/cart.page";
+import { CartPageModule } from "../../modals/cart/cart.module";
+
+import { RestaurantMenuPage } from "./restaurant-menu.page";
 
 @NgModule({
+  entryComponents: [CartPage],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RestaurantMenuPageRoutingModule
+    RestaurantMenuPageRoutingModule,
+    CartPageModule,
   ],
-  declarations: [RestaurantMenuPage]
+  declarations: [RestaurantMenuPage],
 })
 export class RestaurantMenuPageModule {}

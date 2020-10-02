@@ -26,6 +26,7 @@ export class RestaurantMenuPage implements OnInit {
   }
 
   llenarMenu() {
+    this.carrito = [];
     this.menuItems = [
       {
         id: "1",
@@ -35,6 +36,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Ensalada con uvas, lechuga y fresas. Aderezada con ",
         precio: 35,
+        cantidad: 1,
       },
       {
         id: "2",
@@ -44,6 +46,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 20,
+        cantidad: 1,
       },
       {
         id: "3",
@@ -53,6 +56,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet, con coliflor.",
         precio: 25,
+        cantidad: 1,
       },
       {
         id: "4",
@@ -62,6 +66,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Pastel de queso y choclolate",
         precio: 20,
+        cantidad: 1,
       },
       {
         id: "5",
@@ -71,6 +76,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Fresas con crema",
         precio: 15,
+        cantidad: 1,
       },
       {
         id: "6",
@@ -80,6 +86,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Helado sabor chocolate",
         precio: 15,
+        cantidad: 1,
       },
       {
         id: "7",
@@ -89,6 +96,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "cafe expresso rebajado con agua",
         precio: 23,
+        cantidad: 1,
       },
       {
         id: "8",
@@ -98,6 +106,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "cerveza",
         precio: 40,
+        cantidad: 1,
       },
       {
         id: "9",
@@ -107,6 +116,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "refresco",
         precio: 23,
+        cantidad: 1,
       },
       {
         id: "10",
@@ -116,6 +126,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 70,
+        cantidad: 1,
       },
       {
         id: "11",
@@ -125,6 +136,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsun",
         precio: 70,
+        cantidad: 1,
       },
       {
         id: "12",
@@ -134,6 +146,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 45,
+        cantidad: 1,
       },
       {
         id: "13",
@@ -143,6 +156,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 49,
+        cantidad: 1,
       },
       {
         id: "14",
@@ -152,6 +166,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 56,
+        cantidad: 1,
       },
       {
         id: "15",
@@ -161,6 +176,7 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 70,
+        cantidad: 1,
       },
     ];
 
@@ -199,10 +215,12 @@ export class RestaurantMenuPage implements OnInit {
 
   ionViewWillEnter() {
     this.llenarMenu();
+    this.carrito = [];
   }
 
   ionViewWillLeave() {
     this.clearMenu();
+    this.carrito = [];
   }
 
   clearMenu() {
@@ -212,11 +230,14 @@ export class RestaurantMenuPage implements OnInit {
     this.bebidas = [];
     this.huevos = [];
     this.mariscos = [];
+    this.total = 0;
   }
 
   agregarCarrito(producto) {
     this.carrito.push(producto);
+    this.total += producto.precio;
     console.log(producto);
+    console.log(this.carrito);
   }
 
   ngOnInit() {}
@@ -224,19 +245,18 @@ export class RestaurantMenuPage implements OnInit {
   segmentChanged(ev: any) {
     console.log("Segment changed", ev);
     console.log(this.category);
-    const total = this.carrito.length;
-    console.log(total);
-    this.carrito.map((item) => {
-      console.log(item.precio);
-    });
   }
 
   atras() {
     this.navCtrl.navigateForward("/restaurants");
+    this.clearMenu();
   }
 
   async showCart() {
     this.storage.set("carrito", this.carrito);
+    this.storage.set("totalCanasta", this.total);
+    this.carrito = [];
+    this.total = 0;
     const modal = await this.modalCtrl.create({ component: CartPage });
     await modal.dismiss();
     await modal.present();

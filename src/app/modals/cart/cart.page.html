@@ -8,48 +8,31 @@
 
 <ion-content>
   <div class="container">
-    <ion-list class="menu-items">
-      <ion-item>
-        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+    <div *ngIf="itemsCarrito.length === 0" class="mensaje"> No tienes pedidos </div>
+    <ion-list class="menu-items" *ngIf="itemsCarrito.length > 0">
+      <ion-item *ngFor="let producto of itemsCarrito; index as i">
+        <img src="{{producto.foto}}" alt="" />
         <div class="restaurant-info">
-          <h3>Pastel de queso</h3>
+          <h3> {{producto.nombre}} </h3>
           <ion-text>
-            <strong> $20.00 </strong></ion-text>
+            <strong> ${{producto.precio * producto.cantidad}}.00 </strong></ion-text>
         </div>
         <div class="inc">
-          <ion-button>
-            +
-          </ion-button>
-          <ion-label> 1 </ion-label>
-          <ion-button>
+          <ion-button (click)="decrease(i)" [disabled]="producto.cantidad < 1">
             -
+          </ion-button>
+          <ion-label> {{producto.cantidad}} </ion-label>
+          <ion-button (click)="increase(i)">
+            +
           </ion-button>
         </div>
       </ion-item>
-
-      <ion-item>
-        <img src="../../../assets/icon/itacate-27.svg" alt="" />
-        <div class="restaurant-info">
-          <h3>Fresas con crema</h3>
-          <ion-text>
-            <strong> $15.00 </strong></ion-text>
-        </div>
-        <div class="inc">
-          <ion-button>
-            +
-          </ion-button>
-          <ion-label> 1 </ion-label>
-          <ion-button>
-            -
-          </ion-button>
-        </div>
-      </ion-item>
-
     </ion-list>
   </div>
 </ion-content>
 
 <ion-footer>
-  <ion-button class="botones" expand="block" (click)="checkout()">Ir a pagar $35.00 + iva</ion-button>
-  <ion-label> Vaciar canasta</ion-label>
+  <ion-button class="botones" expand="block" (click)="checkout()" [disabled]="total === 0">Ir a pagar ${{total}} + iva
+  </ion-button>
+  <ion-button class="botones" (click)="clearItems()"> Vaciar canasta</ion-button>
 </ion-footer>

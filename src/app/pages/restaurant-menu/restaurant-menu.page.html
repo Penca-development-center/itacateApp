@@ -94,7 +94,7 @@
             <ion-text>
               {{huevo.descripcion}} <br />
               Listo en: <strong>30min</strong> <strong> ${{huevo.precio}}.00 </strong></ion-text>
-            <ion-button> Agregar</ion-button>
+            <ion-button (click)="agregarCarrito(huevo)"> Agregar</ion-button>
           </div>
         </ion-item>
       </div>
@@ -106,44 +106,11 @@
             <ion-text>
               {{marisco.descripcion}} <br />
               Listo en: <strong>30min</strong> <strong> ${{marisco.precio}}.00 </strong> </ion-text>
-            <ion-button> Agregar</ion-button>
+            <ion-button (click)="agregarCarrito(marisco)"> Agregar</ion-button>
           </div>
         </ion-item>
       </div>
     </ion-list>
-
-    <!-- <ion-list class="menu-items">
-      <ion-item>
-        <img src="../../../assets/icon/itacate-23.svg" alt="" />
-        <div class="restaurant-info">
-          <h3>Pastel de queso</h3>
-          <ion-text>
-            Reposteria <br />
-            Listo en: <strong>30min</strong><strong>$20.00</strong></ion-text>
-          <ion-button> Agregar</ion-button>
-        </div>
-      </ion-item>
-
-      <ion-item>
-        <img src="../../../assets/icon/itacate-27.svg" alt="" />
-        <div class="restaurant-info">
-          <h3>Fresas con crema</h3>
-          <ion-text>
-            Reposteria <br />
-            Listo en: <strong>15min</strong><strong>$15.00</strong></ion-text>
-          <ion-button>Agregar</ion-button>
-        </div>
-      </ion-item>
-
-      <ion-item>
-        <img src="../../../assets/icon/itacate-28.svg" alt="" />
-        <div class="restaurant-info">
-          <h3> Helado de chocolate </h3>
-          <ion-text> Reposteria <br /> Listo en: <strong> 30min</strong><strong>$15.00</strong></ion-text>
-          <ion-button> Agregar </ion-button>
-        </div>
-      </ion-item>
-    </ion-list> -->
   </div>
 
 </ion-content>
