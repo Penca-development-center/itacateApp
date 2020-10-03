@@ -36,7 +36,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Ensalada con uvas, lechuga y fresas. Aderezada con ",
         precio: 35,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "2",
@@ -46,7 +47,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 20,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "3",
@@ -56,7 +58,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet, con coliflor.",
         precio: 25,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "4",
@@ -66,7 +69,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Pastel de queso y choclolate",
         precio: 20,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "5",
@@ -76,7 +80,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Fresas con crema",
         precio: 15,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "6",
@@ -86,7 +91,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "Helado sabor chocolate",
         precio: 15,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "7",
@@ -96,7 +102,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "cafe expresso rebajado con agua",
         precio: 23,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "8",
@@ -106,7 +113,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "cerveza",
         precio: 40,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "9",
@@ -116,7 +124,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "refresco",
         precio: 23,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "10",
@@ -126,7 +135,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 70,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "11",
@@ -136,7 +146,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsun",
         precio: 70,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "12",
@@ -146,7 +157,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 45,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "13",
@@ -156,7 +168,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 49,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "14",
@@ -166,7 +179,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 56,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
       {
         id: "15",
@@ -176,7 +190,8 @@ export class RestaurantMenuPage implements OnInit {
         foto: "../../../assets/icon/itacate-platillos.svg",
         descripcion: "lorem ipsum dolor sit amet",
         precio: 70,
-        cantidad: 1,
+        cantidad: 0,
+        totalProducto: 0,
       },
     ];
 
@@ -233,11 +248,18 @@ export class RestaurantMenuPage implements OnInit {
     this.total = 0;
   }
 
-  agregarCarrito(producto) {
-    this.carrito.push(producto);
-    this.total += producto.precio;
-    console.log(producto);
-    console.log(this.carrito);
+  agregarCarrito(producto: any) {
+    let item = producto;
+    console.log(item);
+    item.cantidad += 1;
+    item.totalProducto = item.precio * item.cantidad;
+    if (item.cantidad === 1) {
+      this.carrito.push(item);
+      console.log("Producto Agregado");
+      console.log(this.carrito);
+    } else {
+      console.log();
+    }
   }
 
   ngOnInit() {}

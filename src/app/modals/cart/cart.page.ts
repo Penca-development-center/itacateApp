@@ -13,7 +13,7 @@ import { Storage } from "@ionic/storage";
 export class CartPage implements OnInit {
   public itemsCarrito: any = [];
   public total = 0;
-  public cantidad = 1;
+  public cantidad = 0;
 
   constructor(
     private navCtrl: NavController,
@@ -34,6 +34,7 @@ export class CartPage implements OnInit {
         if (items.length > 0) {
           this.itemsCarrito = items;
           console.log("carrito", this.itemsCarrito);
+          this.cantidad = items.cantidad;
           this.storage
             .get("totalCanasta")
             .then((total: number) => {
