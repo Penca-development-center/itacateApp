@@ -14,6 +14,7 @@ export class CartPage implements OnInit {
   public itemsCarrito: any = [];
   public total = 0;
   public cantidad = 0;
+  public totalItems = 0;
 
   constructor(
     private navCtrl: NavController,
@@ -51,6 +52,8 @@ export class CartPage implements OnInit {
   clearItems() {
     this.itemsCarrito = [];
     this.total = 0;
+    this.totalItems = 0;
+    this.cantidad = 0;
     this.storage.set("carrito", []);
     this.storage.set("totalCanasta", 0);
   }
@@ -80,6 +83,12 @@ export class CartPage implements OnInit {
   }
 
   checkout() {
+    let orden = {
+      items: this.totalItems,
+      totalOrden: this.total,
+    };
+
+    this.storage.set("orden", orden);
     this.dismiss();
     this.navCtrl.navigateForward("/checkout");
   }

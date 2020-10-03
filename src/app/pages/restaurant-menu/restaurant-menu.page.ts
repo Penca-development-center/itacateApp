@@ -252,13 +252,14 @@ export class RestaurantMenuPage implements OnInit {
     let item = producto;
     console.log(item);
     item.cantidad += 1;
+    this.total += item.precio;
     item.totalProducto = item.precio * item.cantidad;
     if (item.cantidad === 1) {
       this.carrito.push(item);
       console.log("Producto Agregado");
       console.log(this.carrito);
     } else {
-      console.log();
+      console.log(this.carrito.indexOf(producto));
     }
   }
 
