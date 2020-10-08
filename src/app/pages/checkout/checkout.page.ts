@@ -9,9 +9,9 @@ import { NavController } from "@ionic/angular";
 })
 export class CheckoutPage implements OnInit {
   constructor(private navCtrl: NavController, private storage: Storage) {
-    this.cargarPrecio;
+    this.cargarPrecio();
   }
-  private precioOrden = 0;
+  public precioOrden: any = 0;
   ngOnInit() {}
 
   ionViewWillLoad() {
@@ -23,6 +23,7 @@ export class CheckoutPage implements OnInit {
       .get("orden")
       .then((orden: any) => {
         this.precioOrden = orden.totalOrden;
+        console.log(orden);
       })
       .catch((error) => console.error);
   }

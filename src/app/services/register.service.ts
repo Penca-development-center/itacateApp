@@ -9,7 +9,7 @@ export class RegisterService {
 
   checkUser(userInfo: any) {
     return new Promise((accept, reject) => {
-      const url: string = "http://localhost:3568/registro/verficar";
+      const url: string = "http://192.168.0.7:3568/registro/verficar";
       const user = {
         email: userInfo.email,
       };
@@ -49,7 +49,7 @@ export class RegisterService {
   doRegister(userInfo: any) {
     return new Promise((accept, reject) => {
       const registerInfo = userInfo;
-      const url: string = "http://localhost:3568/registro";
+      const url: string = "http://192.168.0.7:3568/registro";
       this.http
         .post(
           url,

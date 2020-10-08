@@ -1,20 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { RestaurantsPageRoutingModule } from './restaurants-routing.module';
+import { RestaurantsPageRoutingModule } from "./restaurants-routing.module";
+import { PipeModule } from "../../pipes/pipe/pipe.module";
 
-import { RestaurantsPage } from './restaurants.page';
+import { RestaurantsPage } from "./restaurants.page";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RestaurantsPageRoutingModule
+    PipeModule,
+    RestaurantsPageRoutingModule,
   ],
-  declarations: [RestaurantsPage]
+  declarations: [RestaurantsPage],
 })
 export class RestaurantsPageModule {}

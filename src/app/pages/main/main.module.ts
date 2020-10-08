@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { MainPageRoutingModule } from './main-routing.module';
-
-import { MainPage } from './main.page';
+import { MainPageRoutingModule } from "./main-routing.module";
+import { PipeModule } from "../../pipes/pipe/pipe.module";
+import { MainPage } from "./main.page";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainPageRoutingModule
+    MainPageRoutingModule,
+    PipeModule,
   ],
-  declarations: [MainPage]
+  declarations: [MainPage],
 })
 export class MainPageModule {}

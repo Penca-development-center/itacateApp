@@ -19,18 +19,18 @@
       <ion-icon name="search" slot="start"></ion-icon>
       <ion-input type="text" placeholder="¿Què vas a comer?" (ionChange)="buscar($event)"></ion-input>
     </ion-item>
-    <!-- <ion-list class="lista" *ngIf="productos.length > 0">
-      <ion-item>
-                <img src="../../../assets/icon/itacate-23.svg" alt="" />
-                <div class="restaurant-info">
-                  <h3></h3>
-                  <ion-text>
-                    Reposteria <br />
-                    <strong>30min</strong></ion-text>
-                  <ion-button> Ver más </ion-button>
-                </div>
+    <ion-list class="lista" *ngIf="textoBuscar != ''">
+      <ion-item *ngFor="let producto of productos | filtro: textoBuscar">
+        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>{{producto.nombre}}</h3>
+          <ion-text>
+            {{producto.seccion}} <br />
+            <strong>{{producto.categoria}}</strong></ion-text>
+          <ion-button> Ver más </ion-button>
+        </div>
       </ion-item>
-    </ion-list> -->
+    </ion-list>
     <ion-grid>
       <ion-row>
         <ion-col><img src="../../../assets/icon/itacate-08.svg" alt="" />

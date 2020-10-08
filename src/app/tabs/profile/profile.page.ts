@@ -5,6 +5,7 @@ import {
   ModalController,
 } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
+import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { PrivacyPage } from "../../modals/privacy/privacy.page";
 import { InfoPage } from "../../modals/info/info.page";
 import { CartPage } from "../../modals/cart/cart.page";
@@ -24,7 +25,8 @@ export class ProfilePage implements OnInit {
     private navCtrl: NavController,
     private storage: Storage,
     private toastCtrl: ToastController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private browser: InAppBrowser
   ) {
     this.setName();
   }
@@ -82,6 +84,13 @@ export class ProfilePage implements OnInit {
     const modal = await this.modalCtrl.create({ component: FaqsPage });
     await modal.dismiss();
     await modal.present();
+  }
+
+  openUrl() {
+    this.browser.create(
+      "https://penca-development-center.github.io/itacate/",
+      "_self"
+    );
   }
   closeSession() {
     this.storage

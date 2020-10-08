@@ -18,11 +18,11 @@
             <strong> ${{producto.precio * producto.cantidad}}.00 </strong></ion-text>
         </div>
         <div class="inc">
-          <ion-button (click)="decrease(i)" [disabled]="producto.cantidad < 1">
+          <ion-button class="a1" (click)="decrease(i)" [disabled]="producto.cantidad < 1">
             -
           </ion-button>
           <ion-label> {{producto.cantidad}} </ion-label>
-          <ion-button (click)="increase(i)">
+          <ion-button class="a2" (click)="increase(i)">
             +
           </ion-button>
         </div>

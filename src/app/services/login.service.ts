@@ -10,7 +10,7 @@ export class LoginService {
   doLogIn(userCredentials) {
     return new Promise((accept, reject) => {
       const userDetails = userCredentials;
-      const url: string = "http://localhost:3568/acceso/cliente";
+      const url: string = "http://192.168.0.7:3568/acceso/cliente";
       this.http
         .post(
           url,

@@ -28,7 +28,6 @@ picture h3 {
 
 .container {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,6 +78,7 @@ ion-item {
 ion-slides {
     width: 400px;
     height: 100px;
+    margin: 20px 0;
 }
 
 ion-slides ion-slide {
@@ -89,10 +89,6 @@ ion-slides ion-slide {
 ion-slides ion-slide img {
     width: 100%;
     height: auto;
-}
-
-.categories {
-    width: 100%;
 }
 
 .restaurants {
@@ -152,6 +148,46 @@ ion-slides ion-slide img {
     color: #333333;
     --color: #333333;
     --color-checked: #832d2d;
+}
+
+.container .lista {
+    width: 100%;
+    --background: #f2f2f2;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.lista ion-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    height: 150px;
+    color: #333333;
+    --background: #f2f2f2;
+    --border-radius: 5px;
+    --ion-border-color: #333333;
+    border-radius: 5px;
+}
+
+.lista img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+
+.lista ion-item .restaurant-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .restaurants img {

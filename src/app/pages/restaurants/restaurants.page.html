@@ -17,6 +17,19 @@
       <ion-input type="text" placeholder="¿Què vas a comer?" (ionChange)="buscar($event)"></ion-input>
     </ion-item>
 
+    <ion-list class="lista" *ngIf="textoBuscar != ''">
+      <ion-item *ngFor="let producto of productos | filtro: textoBuscar">
+        <img src="../../../assets/icon/itacate-23.svg" alt="" />
+        <div class="restaurant-info">
+          <h3>{{producto.nombre}}</h3>
+          <ion-text>
+            {{producto.seccion}} <br />
+            <strong>{{producto.categoria}}</strong></ion-text>
+          <ion-button> Ver más </ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+
     <!-- <div class="banner"> -->
     <ion-slides pager="true">
       <ion-slide>

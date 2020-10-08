@@ -8,6 +8,7 @@ import { RestaurantMenuPageRoutingModule } from "./restaurant-menu-routing.modul
 
 import { CartPage } from "../../modals/cart/cart.page";
 import { CartPageModule } from "../../modals/cart/cart.module";
+import { PipeModule } from "../../pipes/pipe/pipe.module";
 
 import { RestaurantMenuPage } from "./restaurant-menu.page";
 
@@ -19,6 +20,7 @@ import { RestaurantMenuPage } from "./restaurant-menu.page";
     IonicModule,
     RestaurantMenuPageRoutingModule,
     CartPageModule,
+    PipeModule,
   ],
   declarations: [RestaurantMenuPage],
 })

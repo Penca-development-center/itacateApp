@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavController, ModalController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 import { CartPage } from "../../modals/cart/cart.page";
+import { ProductsService } from "../../services/products.service";
 @Component({
   selector: "app-restaurant-menu",
   templateUrl: "./restaurant-menu.page.html",
@@ -17,9 +18,11 @@ export class RestaurantMenuPage implements OnInit {
   public carrito: any = [];
   public category: any = "reposteria";
   public total: number = 0;
+  textoBuscar = "";
   constructor(
     private navCtrl: NavController,
     private modalCtrl: ModalController,
+    private productsService: ProductsService,
     private storage: Storage
   ) {
     this.llenarMenu();
@@ -27,6 +30,13 @@ export class RestaurantMenuPage implements OnInit {
 
   llenarMenu() {
     this.carrito = [];
+    // this.productsService
+    //   .getAllProducts()
+    //   .then((menu: any) => {
+    //     this.menuItems = menu;
+    //   })
+    //   .catch((error) => console.error(error));
+
     this.menuItems = [
       {
         id: "1",
@@ -230,12 +240,10 @@ export class RestaurantMenuPage implements OnInit {
 
   ionViewWillEnter() {
     this.llenarMenu();
-    this.carrito = [];
   }
 
   ionViewWillLeave() {
     this.clearMenu();
-    this.carrito = [];
   }
 
   clearMenu() {
@@ -245,7 +253,6 @@ export class RestaurantMenuPage implements OnInit {
     this.bebidas = [];
     this.huevos = [];
     this.mariscos = [];
-    this.total = 0;
   }
 
   agregarCarrito(producto: any) {
