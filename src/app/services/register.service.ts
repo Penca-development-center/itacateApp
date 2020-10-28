@@ -5,9 +5,9 @@ import { ToastController } from "@ionic/angular";
   providedIn: "root",
 })
 export class RegisterService {
-  constructor(private http: HttpClient, private toastCtrl: ToastController) {}
+  constructor(private http: HttpClient, private toastCtrl: ToastController) { }
 
-  async presentToast(message: string) { 
+  async presentToast(message: string) {
     const toast = await this.toastCtrl.create({
       message,
       duration: 1700
@@ -18,7 +18,7 @@ export class RegisterService {
 
   checkUser(userInfo: any) {
     return new Promise((accept, reject) => {
-      const url: string = "http://192.168.0.7:3568/registro/verficar";
+      const url: string = "http://localhost:3568/registro/verficar";
       const user = {
         email: userInfo.email,
       };
@@ -43,7 +43,7 @@ export class RegisterService {
                 code: 1506,
                 user_id: usuario.id_usuario,
               });
-                               this.presentToast("Usuario existente");
+              this.presentToast("Usuario existente");
             } else if (usuario.message) {
               accept({ message: usuario.message, code: 1507 });
               this.presentToast("Usuario registrado");
@@ -60,7 +60,7 @@ export class RegisterService {
   doRegister(userInfo: any) {
     return new Promise((accept, reject) => {
       const registerInfo = userInfo;
-      const url: string = "http://192.168.0.7:3568/registro";
+      const url: string = "http://localhost:3568/registro";
       this.http
         .post(
           url,

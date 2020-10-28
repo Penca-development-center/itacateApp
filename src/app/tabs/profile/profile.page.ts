@@ -88,7 +88,8 @@ export class ProfilePage implements OnInit {
 
   openUrl() {
     this.browser.create(
-      "https://penca-development-center.github.io/itacate/",
+      // "https://penca-development-center.github.io/itacate/",
+      "http://localhost/itacateRestaurant/register.php",
       "_self"
     );
   }

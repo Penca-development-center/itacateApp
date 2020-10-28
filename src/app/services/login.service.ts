@@ -7,7 +7,7 @@ import { ToastController } from "@ionic/angular";
 })
 export class LoginService {
   constructor(private http: HttpClient, private storage: Storage, private toastCtrl: ToastController) { }
-  
+
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({
       message,
@@ -20,7 +20,7 @@ export class LoginService {
   doLogIn(userCredentials) {
     return new Promise((accept, reject) => {
       const userDetails = userCredentials;
-      const url: string = "http://192.168.0.7:3568/acceso/cliente";
+      const url: string = "http://localhost:3568/acceso/cliente";
       this.http
         .post(
           url,

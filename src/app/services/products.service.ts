@@ -5,11 +5,11 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: "root",
 })
 export class ProductsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllProducts() {
     return new Promise((accept, reject) => {
-      const url = "http://192.168.0.7:3568/productos/buscar";
+      const url = "http://localhost:3568/productos/buscar";
       this.http
         .post(
           url,
