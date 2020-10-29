@@ -19,7 +19,7 @@ export class PedidosService {
   constructor(private http: HttpClient, private toastCtrl: ToastController) { }
   addPedido(pedido) {
     return new Promise((accept, reject) => {
-      const url = "http://localhost:3568/pedidos/agregar";
+      const url = "http://192.168.0.8:3568/pedidos/agregar";
       this.http.post(
         url,
         {
@@ -29,8 +29,8 @@ export class PedidosService {
           headers: new HttpHeaders({
           "content-Type": "application/json",
         }),
-        })
-        .subscribe((response: any) => {
+      })
+      .subscribe((response: any) => {
           if (response) {
             this.presentToast('Pedido agregado, se te entrgare en tiempo');
             accept(response);
