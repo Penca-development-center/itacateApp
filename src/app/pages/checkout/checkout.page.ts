@@ -84,8 +84,11 @@ export class CheckoutPage implements OnInit {
     this.presentLoading('Espera');
     setTimeout(() => {
 
-      this.storage.get("orden");
-      this.pedidosService.addPedido();
+      this.storage.get("orden")
+      .then((info:any)=> {
+        this.pedidosService.addPedido(info);
+      })
+      .catch();
       this.storage.set("orden", { items: 0, totalOrden: 0 });
       this.presentAlertConfirm();
     }, 2200);
