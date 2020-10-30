@@ -83,7 +83,10 @@ export class CheckoutPage implements OnInit {
     // Agui se hará el proceso de pago.
     this.presentLoading('Espera');
     setTimeout(() => {
-      this.storage.set("orden", {items: 0, totalOrden: 0});
+
+      this.storage.get("orden");
+      this.pedidosService.addPedido();
+      this.storage.set("orden", { items: 0, totalOrden: 0 });
       this.presentAlertConfirm();
     }, 2200);
   }
