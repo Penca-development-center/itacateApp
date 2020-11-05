@@ -32,8 +32,9 @@ export class PedidosService {
       })
       .subscribe((response: any) => {
           if (response) {
-            this.presentToast('Pedido agregado, se te entrgare en tiempo');
+            this.presentToast('Pedido agregado, se te entrgara en tiempo');
             accept(response);
+            console.log(response);
           } else {
             reject({ message: 'No se ha podido agregar el pedido, intente más tarde' });
             this.presentToast('No se ha podido agregar el pedido, intente más tarde');
