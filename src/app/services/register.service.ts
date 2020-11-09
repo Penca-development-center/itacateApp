@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { ToastController } from "@ionic/angular";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastController } from '@ionic/angular';
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class RegisterService {
   constructor(private http: HttpClient, private toastCtrl: ToastController) { }
@@ -18,7 +18,7 @@ export class RegisterService {
 
   checkUser(userInfo: any) {
     return new Promise((accept, reject) => {
-      const url: string = "http://192.168.0.8:3568/registro/verficar";
+      const url = 'http://localhost:3568/registro/verficar';
       const user = {
         email: userInfo.email,
       };
@@ -30,37 +30,24 @@ export class RegisterService {
             user,
           },
           {
-            headers: new HttpHeaders({ "content-Type": "application/json" }),
+            headers: new HttpHeaders({ 'content-Type': 'application/json' }),
           }
         )
-        .subscribe(
-          (usuario: any) => {
-            console.log(usuario.message);
-            console.log(usuario.id_usuario);
-            if (usuario.id_usuario) {
-              reject({
-                message: "usuario existente",
-                code: 1506,
-                user_id: usuario.id_usuario,
-              });
-              this.presentToast("Usuario existente");
-            } else if (usuario.message) {
-              accept({ message: usuario.message, code: 1507 });
-              this.presentToast("Usuario registrado");
-            }
-          },
-          (error: any) => {
-            console.error(error);
-            reject({ error: error.status, message: error.message });
+        .subscribe((usuario: any) => {
+          console.log(usuario.code === 6);
+          if (usuario.code === 6) {
+            accept({message: 'usuario disponible', code: 7 });
+          } else {
+            reject({ message: 'usuario ya existente', code:  5});
           }
-        );
+        });
     });
   }
 
   doRegister(userInfo: any) {
     return new Promise((accept, reject) => {
       const registerInfo = userInfo;
-      const url: string = "http://192.168.0.8:3568/registro";
+      const url = 'http://localhost:3568/registro';
       this.http
         .post(
           url,
@@ -68,7 +55,7 @@ export class RegisterService {
             registerInfo,
           },
           {
-            headers: new HttpHeaders({ "content-Type": "application/json" }),
+            headers: new HttpHeaders({ 'content-Type': 'application/json' }),
           }
         )
         .subscribe(
@@ -77,7 +64,7 @@ export class RegisterService {
               accept(response);
 
             } else {
-              reject({ message: "Error intente más tarde." });
+              reject({ message: 'Error intente más tarde.' });
             }
           },
           (error: any) => {

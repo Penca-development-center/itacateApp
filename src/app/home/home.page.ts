@@ -13,6 +13,7 @@ import {
 } from "@ionic/angular";
 import { ModalRegPage } from "../pages/modal-reg/modal-reg.page";
 import { RegisterService } from "../services/register.service";
+import { Storage } from "@ionic/storage";
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
@@ -63,6 +64,7 @@ export class HomePage {
     private navCtrl: NavController,
     private modalCtrl: ModalController,
     private toastCtrl: ToastController,
+    private storage: Storage,
     private alertCtrl: AlertController,
     private formBuilder: FormBuilder,
     private registerService: RegisterService
@@ -92,10 +94,11 @@ export class HomePage {
         "",
         Validators.compose([Validators.required, Validators.minLength(5)])
       ),
-      passwordR: new FormControl(
-        "",
-        Validators.compose([Validators.required, Validators.minLength(5)])
-      ),
+      // passwordR: new FormControl(
+
+      //   "",
+      //   Validators.compose([Validators.required, Validators.minLength(5)])
+      // ),
     });
   }
 
@@ -142,43 +145,29 @@ export class HomePage {
   }
 
   validatePassword(credentials) {
-    this.registerForm.reset();
-    const password = credentials.password;
-    const password2 = credentials.passwordR;
-    const info = credentials;
-    if (password === password2) {
-      console.log(info);
-      const infoReg = {
-        userName: info.userName,
-        email: info.email,
-        phoneNumber: info.phoneNumber,
-        password: info.password,
-      };
-      this.registerService
-        .checkUser(infoReg)
-        .then((response: any) => {
-          if (response.code == 1506) {
-            this.presentAlert(
-              `Error: ${response.code}`,
-              "Atención el usuario ya ha sido registrado. ¿Quieres recuperar tu contraseña?"
-            );
-          } else if (response.code == 1507) {
-            this.registerService
-              .doRegister(infoReg)
-              .then((respuesta: any) => {
-                if (respuesta) {
-                  this.navCtrl.navigateForward("/tab");
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }
-        })
-        .catch((err) => console.error(err));
-    } else {
-      this.presentToast("Las contraseñas no coinciden, intente de nuevo.");
-    }
+    const userInfo = credentials;
+    console.log(credentials);
+
+    this.registerService
+      .checkUser(userInfo)
+      .then((response: any) => {
+        if (response) {
+          this.registerService.doRegister(userInfo)
+            .then((response: any) => {
+              console.log(response);
+              const user = {
+                id_usuario: response.insertId,
+                nombre: userInfo.userName,
+                correo: userInfo.email,
+                telefono: userInfo.phoneNumber
+              };
+              this.storage.set("user", user);
+              this.navCtrl.navigateForward("/tab");
+              this.registerForm.reset();
+          } );
+        }
+      })
+      .catch(error => console.error(error));
   }
 
   login() {

@@ -19,7 +19,7 @@ export class PedidosService {
   constructor(private http: HttpClient, private toastCtrl: ToastController) { }
   addPedido(pedido) {
     return new Promise((accept, reject) => {
-      const url = "http://192.168.0.8:3568/pedidos/agregar";
+      const url = "http://localhost:3568/pedidos/agregar";
       this.http.post(
         url,
         {

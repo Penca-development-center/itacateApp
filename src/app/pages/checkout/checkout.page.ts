@@ -82,23 +82,23 @@ export class CheckoutPage implements OnInit {
     this.navCtrl.navigateForward('/restaurant-menu');
   }
 
-  proceedToPay() {
-    // Agui se hará el proceso de pago.
-    this.presentLoading('Espera');
-    setTimeout(() => {
+  // proceedToPay() {
+  //   // Agui se hará el proceso de pago.
+  //   this.presentLoading('Espera');
+  //   setTimeout(() => {
 
-      this.storage.get("carrito")
-      .then((info:any)=> {
-        this.pedidosService.addPedido(info);
-        console.log("listo");
-      })
-      .catch(error => console.error(error));
-      this.storage.set("orden", { items: 0, totalOrden: 0 });
-      this.storage.set("carrito", []);
-      this.storage.set("totalCanasta", 0);
-      this.presentAlertConfirm();
-    }, 2200);
-  }
+  //     this.storage.get("carrito")
+  //     .then((info:any)=> {
+  //       this.pedidosService.addPedido(info);
+  //       console.log("listo");
+  //     })
+  //     .catch(error => console.error(error));
+  //     this.storage.set("orden", { items: 0, totalOrden: 0 });
+  //     this.storage.set("carrito", []);
+  //     this.storage.set("totalCanasta", 0);
+  //     this.presentAlertConfirm();
+  //   }, 2200);
+  // }
 
   sendNotification() {
     this.storage

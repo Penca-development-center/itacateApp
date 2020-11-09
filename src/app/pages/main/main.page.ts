@@ -35,7 +35,7 @@ export class MainPage implements OnInit {
     this.storage
       .get("user")
       .then((user: any) => {
-        this.userName = user.nombre_usuario;
+        this.userName = user.nombre;
       })
       .catch((err) => this.presentToast(err));
   }

@@ -38,9 +38,9 @@ export class ProfilePage implements OnInit {
     this.storage
       .get("user")
       .then((user: any) => {
-        this.userName = user.nombre_usuario;
-        this.userMail = user.correo_usuario;
-        this.userNumber = user.telefono_usuario;
+        this.userName = user.nombre;
+        this.userMail = user.correo;
+        this.userNumber = user.telefono;
       })
       .catch((err) => this.presentToast(err));
   }
@@ -65,11 +65,11 @@ export class ProfilePage implements OnInit {
     await modal.present();
   }
 
-  async editPayment() {
-    const modal = await this.modalCtrl.create({ component: PaymentsPage });
-    await modal.dismiss();
-    await modal.present();
-  }
+  // async editPayment() {
+  //   const modal = await this.modalCtrl.create({ component: PaymentsPage });
+  //   await modal.dismiss();
+  //   await modal.present();
+  // }
   async showOrders() {
     const modal = await this.modalCtrl.create({ component: CartPage });
     await modal.dismiss();

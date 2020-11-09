@@ -9,7 +9,7 @@ export class DirectionsService {
 
   saveDirection(direction) {
     return new Promise((acceot, reject) => {
-      const url = "http://192.168.0.8:3568/direccion/agregar";
+      const url = "http://localhost:3568/direccion/agregar";
       this.http
         .post(
           url,

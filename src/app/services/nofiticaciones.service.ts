@@ -20,7 +20,7 @@ export class NofiticacionesService {
 
   sendNotification(notification: any) {
     return new Promise((accept, reject) => {
-      const url = "http://192.168.0.8:3568/notificaciones/nueva";
+      const url = "http://localhost:3568/notificaciones/nueva";
 
       this.http
         .post(

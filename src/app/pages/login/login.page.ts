@@ -65,7 +65,13 @@ export class LoginPage implements OnInit {
         // this.errorMessage = "";
         this.presentToast("Accediendo");
         console.log(res);
-        this.storage.set("user", res);
+        const user = {
+          id_usuario: res.id_usuario,
+          nombre: res.nombre_usuario,
+          correo: res.correo_usuario,
+          telefono: res.telefono_usuario
+        };
+        this.storage.set("user", user);
         this.navCtrl.navigateForward("/tab");
       })
       .catch((err) => {
