@@ -9,8 +9,11 @@ import {
   NavController,
   AlertController,
   ToastController,
+  ModalController
 } from "@ionic/angular";
 import { LoginService } from "../../services/login.service";
+import { DirectionsService } from "../../services/directions.service";
+import { AgregarDireccionesPage } from "../../modals/agregar-direcciones/agregar-direcciones.page";
 import { Storage } from "@ionic/storage";
 
 @Component({
@@ -20,11 +23,15 @@ import { Storage } from "@ionic/storage";
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
+  public id = 0;
+
   constructor(
     private navCtrl: NavController,
     private alertCtrl: AlertController,
+    private modalCtrl: ModalController,
     private toastCtrl: ToastController,
     private loginService: LoginService,
+    private dirService: DirectionsService,
     private storage: Storage,
     private formBuilder: FormBuilder
   ) {
@@ -50,6 +57,8 @@ export class LoginPage implements OnInit {
     this.navCtrl.navigateForward("/tab");
   }
 
+
+
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({
       message,
@@ -65,6 +74,7 @@ export class LoginPage implements OnInit {
         // this.errorMessage = "";
         this.presentToast("Accediendo");
         console.log(res);
+        this.id = res.id_usuario;
         const user = {
           id_usuario: res.id_usuario,
           nombre: res.nombre_usuario,
@@ -72,7 +82,22 @@ export class LoginPage implements OnInit {
           telefono: res.telefono_usuario
         };
         this.storage.set("user", user);
-        this.navCtrl.navigateForward("/tab");
+        this.dirService.getDirections(this.id)
+          .then((dir: any) => {
+            console.log(dir[0]);
+            console.log(dir === []);
+
+            if (dir === []) {
+              this.presentToast("No tienes una direccion asignada peorfavor agreglala");
+              this.addDirections();
+            } else {
+              this.storage.set("direccion", dir[0]);
+              this.navCtrl.navigateForward("/tab");
+            }
+            // this.storage.set("direccion", dir);
+            // this.navCtrl.navigateForward("/tab");
+          })
+          .catch(error => console.error(error));
       })
       .catch((err) => {
         // this.errorMessage = err;
@@ -80,6 +105,12 @@ export class LoginPage implements OnInit {
       });
 
     this.loginForm.reset();
+  }
+
+  async addDirections() {
+    const modal = await this.modalCtrl.create({component: AgregarDireccionesPage});
+    await modal.dismiss();
+    await modal.present();
   }
 
   atras() {

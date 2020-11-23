@@ -19,11 +19,37 @@ export class PedidosService {
   constructor(private http: HttpClient, private toastCtrl: ToastController) { }
   addPedido(pedido) {
     return new Promise((accept, reject) => {
-      const url = "http://localhost:3568/pedidos/agregar";
+      const url = "http://192.168.0.8:3568/pedidos/agregar";
       this.http.post(
         url,
         {
           pedido
+        },
+        {
+          headers: new HttpHeaders({
+          "content-Type": "application/json",
+        }),
+      })
+      .subscribe((response: any) => {
+          if (response) {
+            this.presentToast('Pedido agregado, se te entrgara en tiempo');
+            accept(response);
+            console.log(response);
+          } else {
+            reject({ message: 'No se ha podido agregar el pedido, intente más tarde' });
+            this.presentToast('No se ha podido agregar el pedido, intente más tarde');
+          }
+      });
+    });
+  }
+
+  addPedidoProductos(itemPedido) {
+        return new Promise((accept, reject) => {
+      const url = "http://192.168.0.8:3568/pedidos/agregarDetalles";
+      this.http.post(
+        url,
+        {
+          itemPedido
         },
         {
           headers: new HttpHeaders({

@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PedidosInfoPage} from "./pedidos-info.page"
 
 import { IonicModule } from '@ionic/angular';
 
-import { AgregarTarjetasPage } from './agregar-tarjetas.page';
+
 
 @NgModule({
-  entryComponents:[AgregarTarjetasPage],
+  entryComponents: [
+    PedidosInfoPage,
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     ReactiveFormsModule,
+    IonicModule,
+    PedidosInfoPageModule,
   ],
-  declarations: [AgregarTarjetasPage]
+  declarations: [PedidosInfoPage]
 })
-export class AgregarTarjetasPageModule {}
+export class PedidosInfoPageModule {}

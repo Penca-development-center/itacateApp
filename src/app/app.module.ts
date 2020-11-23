@@ -12,6 +12,7 @@ import { IonicStorageModule } from "@ionic/storage";
 import { HttpClientModule } from "@angular/common/http";
 
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
+import { PipeModule} from "./pipes/pipe/pipe.module";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

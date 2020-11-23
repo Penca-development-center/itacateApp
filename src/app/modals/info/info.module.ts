@@ -1,18 +1,18 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { IonicModule } from "@ionic/angular";
+import { IonicModule} from "@ionic/angular";
+
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 import { InfoPage } from "./info.page";
-
-import { InfoPageRoutingModule } from "./info-routing.module";
-
 @NgModule({
+  entryComponents:[InfoPage],
   imports: [
     CommonModule,
     FormsModule,
+    InfoPageModule,
     ReactiveFormsModule,
     IonicModule,
-    InfoPageRoutingModule,
   ],
   declarations: [InfoPage],
 })

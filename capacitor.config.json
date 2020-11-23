@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "pencaDeliveri",
+  "appId": "com.penca.itacate",
+  "appName": "itacate",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

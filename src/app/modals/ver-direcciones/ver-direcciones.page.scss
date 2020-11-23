@@ -33,6 +33,14 @@ ion-content {
     --color: none;
 }
 
+ion-button {
+    text-transform: initial;
+    --background: #ea153e;
+    --color: #ffffff;
+    --border-radius: 5px;
+    --box-shadow: none;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -48,7 +56,7 @@ ion-content {
 
 .container .direcciones {
     width: 100%;
-    height: 90%;
+    height: 100vh;
     background: #f2f2f2;
     padding: 10px;
     display: flex;
@@ -59,29 +67,27 @@ ion-content {
 
 .container .direcciones ion-item {
     width: 100%;
+    height: 160px;
+    margin: 5px 0;
     --background: #f2f2f2;
     color: #333333;
     --border-color: #f2f2f2;
 }
 
-.container .direcciones ion-item .direccion {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10px;
+.container .direcciones ion-item ion-icon {
+    width: 20%;
+    height: 75px;
 }
 
-.container .direcciones ion-item .direccion ion-icon {
-    width: 30px;
-    height: 30px;
+.container .direcciones ion-item .detalles {
+    width: 80%;
+    margin: 0 5px;
+    height: 100%;
+    font-size: 15px;
 }
 
-.container .direcciones ion-item .direccion ion-text {
-    height: 30px;
-    width: calc(85% - 30px);
-    font-size: 13px;
+.botones ion-button{
+    margin: 5px 0;
 }
 
 ion-footer {

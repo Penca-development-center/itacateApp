@@ -8,9 +8,9 @@ import { Storage } from "@ionic/storage";
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { PrivacyPage } from "../../modals/privacy/privacy.page";
 import { InfoPage } from "../../modals/info/info.page";
-import { CartPage } from "../../modals/cart/cart.page";
 import { FaqsPage } from "../../modals/faqs/faqs.page";
-import { PaymentsPage } from "../../modals/payments/payments.page";
+import { PedidosInfoPage } from "../../modals/pedidos-info/pedidos-info.page";
+// import { PaymentsPage } from "../../modals/payments/payments.page";
 import { VerDireccionesPage } from "../../modals/ver-direcciones/ver-direcciones.page";
 @Component({
   selector: "app-profile",
@@ -38,9 +38,15 @@ export class ProfilePage implements OnInit {
     this.storage
       .get("user")
       .then((user: any) => {
-        this.userName = user.nombre;
-        this.userMail = user.correo;
-        this.userNumber = user.telefono;
+        if (user) { 
+          this.userName = user.nombre;
+          this.userMail = user.correo;
+          this.userNumber = user.telefono;
+          console.log({user});
+        } else {
+          console.log("nose");
+        }
+
       })
       .catch((err) => this.presentToast(err));
   }
@@ -71,7 +77,7 @@ export class ProfilePage implements OnInit {
   //   await modal.present();
   // }
   async showOrders() {
-    const modal = await this.modalCtrl.create({ component: CartPage });
+    const modal = await this.modalCtrl.create({component: PedidosInfoPage});
     await modal.dismiss();
     await modal.present();
   }
@@ -94,13 +100,10 @@ export class ProfilePage implements OnInit {
     );
   }
   closeSession() {
-    this.storage
-      .remove("user")
-      .then((res: any) => {
-        this.navCtrl.navigateForward("/home");
-      })
-      .catch((error) => {
-        this.presentToast(error);
-      });
+    this.storage.set("carrito", []);
+    this.storage.set("direccion", {});
+    this.storage.set("totalCanasta", 0);
+    this.storage.set("user", {});
+    this.navCtrl.navigateForward("/home");
   }
 }

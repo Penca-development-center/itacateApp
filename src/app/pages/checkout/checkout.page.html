@@ -12,47 +12,58 @@
   <div class="container">
     <h2>Checkout</h2>
     <div class="direccion">
-
-      <ion-item>
-        <div class="direccion">
+      <ion-item *ngIf="defaultAddresLength === 0">
+        <ion-label> Vaya parece que no tienes direcciones agregadas aun </ion-label> <br>
+        <ion-button (click)="cambiar()"> Agregar una nueva direccion </ion-button> <br>
+      </ion-item>
+      <ion-item  *ngIf="defaultAddresLength > 0">
           <ion-icon src="../../../assets/icon/marcador.svg" class="direccion-icon"></ion-icon>
           <ion-text class="">
-            Dirección
+            Dirección de entrega.
             <ion-label>
-              123 fake street
+              calle: {{defaultAddress.calle}} <br> #{{defaultAddress.numero}} <br> Colonia: {{defaultAddress.colonia}}
             </ion-label>
+            <!-- <ion-button (click)="cambiar()">Cambiar</ion-button> -->
           </ion-text>
-        </div>
       </ion-item>
       <ion-text class="tiempo-ent">
         <ion-label>Entrega estimada</ion-label>
-        <ion-label>20-30 mins</ion-label>
+        <ion-label>20-30 mins</ion-label> <br>
       </ion-text>
     </div>
     <div class="pagos">
-      <h3>Forma de pago</h3>
       <ion-list>
+      <ion-radio-group allow-empty-selection="false" (ionChange)="change($event)">
+        <ion-list-header>
+          <ion-label>Forma de pago</ion-label>
+        </ion-list-header>
+
         <ion-item class="pago-option">
           <ion-icon src="../../../assets/icon/itacate-31.svg" slot="start"></ion-icon>
           <ion-label>Efectivo</ion-label>
+          <ion-radio slot="end" value="efectivo" mode="ios"></ion-radio>
         </ion-item>
+
         <ion-item class="pago-option">
           <img src="../../../assets/icon/itacate-30.svg" slot="start" width="20" height="20">
           <ion-label>Tarjeta de Crédito/Débito</ion-label>
+          <ion-radio slot="end" value="tarjeta" mode="ios"></ion-radio>
         </ion-item>
         <ion-item class="pago-option">
           <ion-icon src="../../../assets/icon/itacate-29.svg" slot="start"></ion-icon>
           <ion-label>Paypal</ion-label>
-        </ion-item>
+          <ion-radio slot="end" value="paypal" mode="ios"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
       </ion-list>
     </div>
   </div>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="sendNotification()">
+<ion-button (click)="doOrder()" [disabled]="order.metodo_pago === ''">
     <div class="btn-wrapper">
       <h4>Hacer pedido</h4>
-      <ion-text>${{precioOrden || 0}}</ion-text>
+      <ion-text>${{ precioOrden || 0}}</ion-text>
     </div>
   </ion-button>
 </ion-footer>

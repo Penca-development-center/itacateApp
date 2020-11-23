@@ -4,23 +4,21 @@ import { Pipe, PipeTransform } from "@angular/core";
   name: "filtro",
 })
 export class FiltroPipe implements PipeTransform {
-  transform(productos: any, texto: string): any[] {
+  transform(productos: any[], texto: string): any[] {
     console.log(productos);
-    if (texto.length === 0) {
+
+    if ( texto === '' ) {
       return productos;
     }
 
     texto = texto.toLowerCase();
-    console.log(`Lo que se va a buscar: ${texto}`);
 
-    return productos.filter((producto) => {
-      return (
-        producto.marca.toLowerCase().includes(texto) ||
-        producto.cultivo.toLowerCase().includes(texto) ||
-        producto.epoca_cultivo.toLowerCase().includes(texto) ||
-        producto.nombre_tecnico.toLowerCase().includes(texto)
-      );
+    return productos.filter((item: any) => {
+      return item.nombre.toLowerCase().includes(texto)
+        || item.seccion.toLowerCase().includes(texto)
+        || item.categoria.toLowerCase().includes(texto);
     });
+
   }
 }
 

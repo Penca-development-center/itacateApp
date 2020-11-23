@@ -55,7 +55,6 @@ export class CartPage implements OnInit {
     this.totalItems = 0;
     this.cantidad = 0;
     this.storage.set("carrito", []);
-    this.storage.set("totalCanasta", 0);
   }
 
   ngOnInit() {}
@@ -83,12 +82,6 @@ export class CartPage implements OnInit {
   }
 
   checkout() {
-    let orden = {
-      items: this.totalItems,
-      totalOrden: this.total,
-    };
-
-    this.storage.set("orden", orden);
     this.dismiss();
     this.navCtrl.navigateForward("/checkout");
   }

@@ -9,7 +9,7 @@ export class ProductsService {
 
   getAllProducts() {
     return new Promise((accept, reject) => {
-      const url = "http://localhost:3568/productos/buscar";
+      const url = "http://192.168.0.8:3568/productos/buscar";
       this.http
         .post(
           url,

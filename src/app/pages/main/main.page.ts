@@ -35,7 +35,12 @@ export class MainPage implements OnInit {
     this.storage
       .get("user")
       .then((user: any) => {
-        this.userName = user.nombre;
+        if (user) {
+          this.userName = user.nombre;
+          console.log({user});
+        } else {
+          console.log("nose");
+        }
       })
       .catch((err) => this.presentToast(err));
   }
@@ -51,8 +56,8 @@ export class MainPage implements OnInit {
   }
 
   buscar(ev: any) {
-    const texto = ev.detail.value;
-    this.textoBuscar = texto;
+    console.log(ev);
+    this.textoBuscar = ev.detail.value;
   }
   ionViewWillLeave() {
     this.productos = [];

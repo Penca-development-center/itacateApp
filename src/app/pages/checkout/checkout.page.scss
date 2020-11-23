@@ -58,11 +58,10 @@ picture h3 {
 .container .direccion .tiempo-ent {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center; 
 }
-
 .container ion-item {
     width: 100%;
     --background: #f2f2f2;

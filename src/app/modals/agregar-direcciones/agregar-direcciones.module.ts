@@ -4,17 +4,19 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { IonicModule } from "@ionic/angular";
 
-import { AgregarDireccionesPageRoutingModule } from "./agregar-direcciones-routing.module";
 
 import { AgregarDireccionesPage } from "./agregar-direcciones.page";
 
 @NgModule({
+  entryComponents:[
+    AgregarDireccionesPage
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    AgregarDireccionesPageModule,
     IonicModule,
-    AgregarDireccionesPageRoutingModule,
   ],
   declarations: [AgregarDireccionesPage],
 })

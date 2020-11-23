@@ -20,7 +20,8 @@ import { UpdateService } from "../../services/update.service";
   styleUrls: ["./info.page.scss"],
 })
 export class InfoPage implements OnInit {
-  private userId: any;
+  public id_usuario = 0;
+
   editForm: FormGroup;
   constructor(
     private navCtrl: NavController,
@@ -31,7 +32,15 @@ export class InfoPage implements OnInit {
     private storage: Storage,
     private updateS: UpdateService
   ) {
-    this.editForm = this.formBuilder.group({
+      this.updateS.getUserInfo()
+      .then((user: any) => {
+        console.log(user[0]);
+        this.id_usuario = user[0].id_usuario;
+        console.log(this.id_usuario);
+      })
+      .catch(error => console.error(error));
+
+      this.editForm = this.formBuilder.group({
       userName: new FormControl(
         "",
         Validators.compose([Validators.required, Validators.minLength(3)])
@@ -53,21 +62,15 @@ export class InfoPage implements OnInit {
         ])
       ),
 
-      password: new FormControl(
-        "",
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(5)
-        ])
-      ),
+      // password: new FormControl(
+      //   "",
+      //   Validators.compose([
+      //     Validators.required,
+      //     Validators.minLength(5)
+      //   ])
+      // ),
     });
 
-    this.updateS.getUserInfo()
-      .then((user: any) => {
-        console.log(user);
-        this.userId = user.id_usuario;
-      })
-      .catch(error => console.error(error));
   }
 
 
@@ -82,10 +85,10 @@ export class InfoPage implements OnInit {
   }
 
   ionViewVillEnter() {
-    this.updateS.getUserInfo()
+    this.storage.get("user")
       .then((user: any) => {
         console.log(user);
-        this.userId = user.id_usuario;
+        this.id_usuario = user.id_usuario;
       })
       .catch(error => console.error(error));
   }
@@ -95,19 +98,20 @@ export class InfoPage implements OnInit {
   }
 
   doUpdateInfo(updates) {
-    console.log(updates);
+    console.log(this.editForm.value);
     const userInfoU = {
-      id : this.userId,
+      id_usuario: this.id_usuario,
       nombre: updates.userName,
       correo: updates.email,
       telefono: updates.phoneNumber,
-      passs: updates.password
     };
+
+    console.log(userInfoU);
     this.updateS.updateUserInfo(userInfoU)
       .then((updateInfo: any) => {
         if (updateInfo) {
           const user = {
-            id: userInfoU.id,
+            id_usuario: userInfoU.id_usuario,
             nombre: userInfoU.nombre,
             correo: userInfoU.correo,
             telefono: userInfoU.telefono,

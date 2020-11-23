@@ -10,23 +10,23 @@
 
         <ion-item>
           <ion-label position="floating"> ¿Cómo te llamas?</ion-label>
-          <ion-input type="text" formControlName="userName" placeholder="John Doe"></ion-input>
+          <ion-input type="text" formControlName="userName" placeholder="nuevo nombre"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Nuevo correo electrónico</ion-label>
-          <ion-input type="text" formControlName="email" placeholder="alguien@example.com"></ion-input>
+          <ion-input type="text" formControlName="email" placeholder="nuevo correo"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Nuevo número de teléfono. </ion-label>
-          <ion-input type="number" formControlName="phoneNumber" placeholder="5566123456"></ion-input>
+          <ion-input type="number" formControlName="phoneNumber" placeholder="nuevo telefono"></ion-input>
         </ion-item>
 
-        <ion-item>
+        <!-- <ion-item>
           <ion-label position="floating"> Nueva contraseña </ion-label>
           <ion-input type="passsword" formControlName="password" placeholder="******"></ion-input>
-        </ion-item>
+        </ion-item> -->
 
         <div class="botones">
           <ion-button type="submit" expand="block" [disabled]="editForm.invalid" class="a"> Modificar datos

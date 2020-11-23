@@ -8,8 +8,8 @@ export class DirectionsService {
   constructor(private http: HttpClient) {}
 
   saveDirection(direction) {
-    return new Promise((acceot, reject) => {
-      const url = "http://localhost:3568/direccion/agregar";
+    return new Promise((accept, reject) => {
+      const url = "http://192.168.0.8:3568/direccion/agregar";
       this.http
         .post(
           url,
@@ -20,7 +20,40 @@ export class DirectionsService {
             headers: new HttpHeaders({ "content-Type": "application/json" }),
           }
         )
-        .subscribe();
+        .subscribe((status: any) => {
+          if (status) {
+            accept(status);
+            console.log(status);
+          } else {
+            reject({message: "Intenta mas tarde"});
+            console.log({message: "Intenta mas tarde"});
+          }
+        });
+    });
+  }
+
+  getDirections(idUsuario) {
+    return new Promise((accept, reject) => {
+      const url = "http://192.168.0.8:3568/direccion/buscar";
+      this.http
+        .post(
+          url,
+          {
+            idUsuario
+          },
+          {
+            headers: new HttpHeaders({ "content-Type": "application/json" }),
+          }
+        )
+        .subscribe((status: any) => {
+          if (status) {
+            accept(status);
+            console.log(status);
+          } else {
+            reject({message: "Intenta mas tarde"});
+            console.log({message: "Intenta mas tarde"});
+          }
+        });
     });
   }
 }

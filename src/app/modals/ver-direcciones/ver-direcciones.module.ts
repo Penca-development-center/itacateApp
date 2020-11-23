@@ -4,17 +4,17 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { IonicModule } from "@ionic/angular";
 
-import { VerDireccionesPageRoutingModule } from "./ver-direcciones-routing.module";
 
 import { VerDireccionesPage } from "./ver-direcciones.page";
 
 @NgModule({
+  entryComponents:[VerDireccionesPage],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    VerDireccionesPageRoutingModule,
+    VerDireccionesPageModule
   ],
   declarations: [VerDireccionesPage],
 })

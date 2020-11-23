@@ -18,7 +18,7 @@ export class RegisterService {
 
   checkUser(userInfo: any) {
     return new Promise((accept, reject) => {
-      const url = 'http://localhost:3568/registro/verficar';
+      const url = 'http://192.168.0.8:3568/registro/verficar';
       const user = {
         email: userInfo.email,
       };
@@ -47,7 +47,7 @@ export class RegisterService {
   doRegister(userInfo: any) {
     return new Promise((accept, reject) => {
       const registerInfo = userInfo;
-      const url = 'http://localhost:3568/registro';
+      const url = 'http://192.168.0.8:3568/registro';
       this.http
         .post(
           url,

@@ -10,16 +10,17 @@
   <div class="container">
     <h2>Tus direcciones guardadas</h2>
     <ion-list class="direcciones">
-      <ion-item>
-        <div class="direccion">
-          <ion-icon src="../../../assets/icon/marcador.svg" class="direccion-icon"></ion-icon>
-          <ion-text class="">
-            XXXXXXXXXXXXXXXXXXXXXX
-            <ion-label>
-              yyyyyyyyyyy yyyy
-            </ion-label>
+      <ion-item *ngFor="let direccion of arrAdrdress">
+        <ion-icon src="../../../assets/icon/marcador.svg" class="direccion-icon"></ion-icon>
+          <ion-text class="detalles">
+            <h5>{{direccion.calle}} # {{direccion.numero}}</h5>
+                Localidad: {{direccion.localidad}}. Municipio: {{direccion.municipio}}.
+                <!-- Referencia: {{direccion.refrerencia}} -->
+                <div class="botones">
+                  <ion-button size="small" (click)="setDefualtAddress(direccion)">usar para entregas</ion-button>
+                  <ion-button size="small" (click)="deleteAddress(direccion.id_direccion)">borrar</ion-button>
+                </div>
           </ion-text>
-        </div>
       </ion-item>
     </ion-list>
   </div>
