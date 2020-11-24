@@ -68,4 +68,31 @@ export class PedidosService {
       });
     });
   }
+
+  viewPedido(id_usuario) {
+    return new Promise((accept, reject) => {
+      const url = "http://192.168.0.8:3568/pedidos/ver";
+      this.http
+        .post(
+          url,
+          {
+            id_usuario
+          }, 
+          {
+            headers: new HttpHeaders({
+              "content-Type": "application/json" 
+            }),
+          }
+        )
+        .subscribe((response: any) => {
+          if (response) {
+            accept(response);
+            console.log(response);
+          } else {
+            reject({ message: 'No se ha encontrado tu pedido' });
+            this.presentToast('No se ha encontrado tu pedido');
+          }          
+        }); 
+    });
+  }
 }

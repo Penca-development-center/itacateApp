@@ -1,16 +1,86 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pedidosInfo</ion-title>
+    <ion-title> Mis Órdendes </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="container">
-    <h2>Tus productos</h2>
-    <ion-list><ion-list-header><ion-icon name="radio-button-off"></ion-icon></ion-list-header></ion-list>
-    <ion-list><ion-list-header><ion-icon name="radio-button-off"></ion-icon></ion-list-header></ion-list>
-    <ion-list><ion-list-header><ion-icon name="radio-button-off"></ion-icon></ion-list-header></ion-list>
+    <h2>Mis Órdenes</h2>
+    <ion-list color="secondary">
+      <ion-list-header>
+        <ion-label>Pendientes</ion-label> 
+        <ion-icon name="radio-button-off" color="warning"></ion-icon>
+      </ion-list-header>
+      <ion-item *ngFor="let orden of pedidos">
+        <h4>Orden: </h4>
+        <ion-text>
+          
+        </ion-text>
+        <ion-button size="small" slot="end" > Ver detalles </ion-button>        
+      </ion-item>
+    </ion-list>
 
-    <ion-button color="primary" expand="full" (click)="close()"></ion-button>
+    <ion-list color="secondary">
+      <ion-list-header>
+         <ion-label>Aceptadas</ion-label> 
+         <ion-icon name="radio-button-off" color="success"></ion-icon>
+      </ion-list-header>
+      <ion-item *ngFor="let orden of pedidosAceptados">
+        <h4>Orden: </h4>
+        <ion-text>
+          
+        </ion-text>
+        <ion-button size="small" slot="end" > Ver detalles </ion-button>        
+      </ion-item>
+    </ion-list>
+
+    <ion-list color="secondary">
+      <ion-list-header>
+         <ion-label> En camino </ion-label>  
+         <ion-icon name="radio-button-off" color="tertiary"></ion-icon>
+        </ion-list-header>
+        <ion-item *ngFor="let orden of pedidosEnCamino">
+          <h4>Orden: </h4>
+          <ion-text>
+            
+          </ion-text>
+        <ion-button size="small" slot="end" > Ver detalles </ion-button>          
+        </ion-item>
+    </ion-list>
+
+    <ion-list color="secondary">
+      <ion-list-header>
+         <ion-label>Entregadas</ion-label> 
+         <ion-icon name="radio-button-off" color="warning"></ion-icon>
+      </ion-list-header>
+      <ion-item *ngFor="let orden of pedidosEntregados">
+        <h4>Orden: </h4>
+        <ion-text>
+          
+        </ion-text>
+        <ion-button size="small" slot="end" > Ver detalles </ion-button>        
+      </ion-item>
+    </ion-list>
+
+    <ion-list color="secondary">
+      <ion-list-header>
+         <ion-label>Rechazadas</ion-label> 
+         <ion-icon name="radio-button-off" color="danger"></ion-icon>
+      </ion-list-header>
+      <ion-item *ngFor="let orden of pedidosCancelados">
+        <h4>Orden: </h4>
+        <ion-text>
+          
+        </ion-text>
+        <ion-button size="small" slot="end" > Ver detalles </ion-button>        
+      </ion-item>
+    </ion-list>
+
+
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-button color="primary" expand="full" (click)="close()"> Aceptar </ion-button>
+</ion-footer>
